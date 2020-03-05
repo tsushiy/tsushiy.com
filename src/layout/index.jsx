@@ -10,14 +10,6 @@ import "katex/dist/katex.min.css";
 import "prismjs/themes/prism-tomorrow.css";
 
 const useStyles = makeStyles({
-  indexContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji"'
-  },
   indexChildrenContainer: {
     margin: "1em auto",
     maxWidth: "880px"
@@ -29,7 +21,7 @@ const MainLayout = props => {
   const { children } = props;
 
   return (
-    <div className={classes.indexContainer}>
+    <>
       <Helmet>
         <meta name="description" content={config.siteDescription} />
         <link rel="icon" href={favicon} />
@@ -39,8 +31,10 @@ const MainLayout = props => {
         ></link>
       </Helmet>
       <Navigation />
-      <Container className={classes.indexChildrenContainer}>{children}</Container>
-    </div>
+      <Container className={classes.indexChildrenContainer}>
+        {children}
+      </Container>
+    </>
   );
 };
 

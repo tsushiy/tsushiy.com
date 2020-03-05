@@ -8,8 +8,7 @@ import UserLinks from "../components/UserLinks";
 const useStyles = makeStyles({
   navBar: {
     backgroundColor: "#F0F0F0",
-    paddingTop: "5px",
-    paddingBottom: "5px"
+    padding: "5px 0"
   },
   navTitle: {
     color: "#222",
