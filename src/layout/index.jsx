@@ -24,6 +24,7 @@ const MainLayout = props => {
     <>
       <Helmet>
         <meta name="description" content={config.siteDescription} />
+        <html lang="ja" />
         <link rel="icon" href={favicon} />
         <link
           href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
