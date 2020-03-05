@@ -35,6 +35,7 @@ module.exports = {
         path: `${__dirname}/content/`
       }
     },
+    "gatsby-plugin-material-ui",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -63,8 +64,8 @@ module.exports = {
               aliases: {},
               showLineNumbers: false,
               noInlineHighlight: false,
-              escapeEntities: {},
-            },
+              escapeEntities: {}
+            }
           },
           {
             resolve: "gatsby-remark-responsive-iframe"
