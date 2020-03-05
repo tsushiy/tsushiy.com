@@ -42,9 +42,6 @@ a {
   word-wrap: break-word;
 }
 
-p {
-  margin: 0.5em;
-}
 
 h1 {
   font-size: 3em;
@@ -53,7 +50,7 @@ h1 {
 
 h2 {
   font-size: 2em;
-  margin: 1rem 0 0.7rem;
+  margin: 0.7rem 0 0.5rem;
 }
 
 h3 {

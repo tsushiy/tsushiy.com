@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     flexDirection: "column"
   },
   postTitleMeta: {
-    marginBottom: "8px"
+    marginBottom: "3px"
   },
   postSocialMeta: {
     display: "flex",
