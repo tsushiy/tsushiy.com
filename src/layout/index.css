@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background-color: #fcfcfc;
+}
+
+body {
+  color: #3f3f3f;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 100%;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  scroll-behavior: smooth;
+}
+
+ul {
+  margin: 0.5em auto;
+}
+
+li {
+  padding: 1px;
+}
+
+li p {
+  margin: 0;
+}
+
+li ul {
+  margin: 0.2em;
+}
+
+a {
+  text-decoration: none;
+  border: none;
+  color: #5282f3;
+  word-wrap: break-word;
+}
+
+p {
+  margin: 0.5em;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 1.5rem 0 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 1rem 0 0.7rem;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 0.7rem 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+code {
+  border-radius: 5px;
+  padding: .3px 3px;
+  margin: 0 0;
+  border: solid thin #cecece;
+  word-wrap: break-word;
+  letter-spacing: normal;
+}
+
+blockquote {
+  border-left: .25em solid;
+  margin: 1em;
+  padding: 0 1em;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .MuiContainer-root {
+    font-size: 0.95em;
+  }
+}
+
+#___gatsby #gatsby-focus-wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+}

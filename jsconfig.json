@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "baseUrl": "src",
+    "jsx": "react",
+    "paths": {
+      "*": ["*", "src/*"]
+    },
+    "module": "commonJS",
+    "moduleResolution": "node"
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "typingOptions": {
+    "enableAutoDiscovery": true
+  },
+  "module": "esnext",
+  "moduleResolution": "node",
+  "compileOnSave": true,
+  "allowJS": true,
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
