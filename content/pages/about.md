@@ -6,7 +6,7 @@ template: "page"
 
 <h2>tsushiy</h2>
 
-東北大学大学院 情報科学研究科 修士1年
+東北大学大学院 情報科学研究科 修士2年
 
 <h2><i class="far fa-smile"></i> Interest</h2>
 
