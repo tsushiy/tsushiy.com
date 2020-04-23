@@ -1,10 +1,14 @@
 export default [
   {
     name: 'About',
-    link: '/about/',
+    url: '/about/',
   },
   {
     name: 'Blog',
-    link: '/blog/',
+    url: '/blog/',
+  },
+  {
+    name: 'Codernote',
+    url: 'https://codernote.tsushiy.com/',
   },
 ]

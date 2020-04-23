@@ -39,10 +39,22 @@ const Navigation = () => {
           tsushiy
         </Link>
         <div className={classes.navLinks}>
-          {NavLinks.map(link => (
-            <Link key={link.name} to={link.link}>
-              <Button className={classes.navLink}>{link.name}</Button>
-            </Link>
+          {NavLinks.map((link, k) => (
+            <React.Fragment key={k}>
+            {link.url.startsWith('/') && (
+              <Link to={link.url}>
+                <Button className={classes.navLink}>{link.name}</Button>
+              </Link>
+            )}
+            {!link.url.startsWith('/') && (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener">
+                <Button className={classes.navLink}>{link.name}</Button>
+              </a>
+            )}
+            </React.Fragment>
           ))}
         </div>
         <div className={classes.userLinks}>
