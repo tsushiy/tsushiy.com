@@ -120,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: edge.node.fields.slug,
-      component: component,
+      component,
       context: {
         slug: edge.node.fields.slug,
         nexttitle: nextEdge.node.frontmatter.title,

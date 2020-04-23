@@ -40,8 +40,7 @@ const PostListing = props => {
   return (
     <div>
       <List>
-        {/* Your post list here. */
-        postList.map(post => {
+        {postList.map(post => {
           const cover = post.cover.childImageSharp.fixed
             ? post.cover.childImageSharp.fixed
             : null;

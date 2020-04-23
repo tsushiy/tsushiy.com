@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+
 import { Container, Button } from "@material-ui/core";
 import Layout from "../layout";
 import PostListing from "../components/PostListing";
 import config from "../../data/SiteConfig";
 
 const TagTemplate = props => {
-  const { tag } = props.pageContext;
-  const postEdges = props.data.allMarkdownRemark.edges;
+  const { data, pageContext } = props;
+  const { tag } = pageContext;
+  const postEdges = data.allMarkdownRemark.edges;
 
   return (
     <Layout>

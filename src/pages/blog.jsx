@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+
 import { Container, Button } from "@material-ui/core";
 import Layout from "../layout";
 import SEO from "../components/SEO";
@@ -9,11 +9,12 @@ import Footer from "../components/Footer";
 import PostListing from "../components/PostListing";
 
 const IndexPage = props => {
-  const postEdges = props.data.allMarkdownRemark.edges;
+  const { data } = props;
+  const postEdges = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
-      <Helmet title={`Articles`} />
+      <Helmet title="Articles" />
       <SEO />
       <Container>
         <h2>Articles</h2>

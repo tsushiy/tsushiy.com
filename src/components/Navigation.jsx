@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import NavLinks from "../../data/NavLinks";
-import UserLinks from "../components/UserLinks";
+import UserLinks from "./UserLinks";
 
 const useStyles = makeStyles({
   navBar: {
@@ -39,21 +39,18 @@ const Navigation = () => {
           tsushiy
         </Link>
         <div className={classes.navLinks}>
-          {NavLinks.map((link, k) => (
-            <React.Fragment key={k}>
-            {link.url.startsWith('/') && (
-              <Link to={link.url}>
-                <Button className={classes.navLink}>{link.name}</Button>
-              </Link>
-            )}
-            {!link.url.startsWith('/') && (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener">
-                <Button className={classes.navLink}>{link.name}</Button>
-              </a>
-            )}
+          {NavLinks.map(link => (
+            <React.Fragment key={link.name}>
+              {link.url.startsWith("/") && (
+                <Link to={link.url}>
+                  <Button className={classes.navLink}>{link.name}</Button>
+                </Link>
+              )}
+              {!link.url.startsWith("/") && (
+                <a href={link.url}>
+                  <Button className={classes.navLink}>{link.name}</Button>
+                </a>
+              )}
             </React.Fragment>
           ))}
         </div>

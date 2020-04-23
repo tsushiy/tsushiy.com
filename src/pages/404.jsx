@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import config from "../../data/SiteConfig";
 
-const NotFoundPage = props => {
+const NotFoundPage = () => {
   return (
     <Layout>
       <SEO />

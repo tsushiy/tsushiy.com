@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   }
 });
 
-const UserLinks = props => {
+const UserLinks = () => {
   const classes = useStyles();
 
   const getLinkElements = () => {
@@ -21,7 +21,7 @@ const UserLinks = props => {
     return userLinks.map(link => (
       <a href={link.url} key={link.label}>
         <IconButton type="button">
-          <i className={link.iconClassName}></i>
+          <i className={link.iconClassName} />
         </IconButton>
       </a>
     ));

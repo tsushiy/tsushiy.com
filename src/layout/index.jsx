@@ -29,7 +29,7 @@ const MainLayout = props => {
         <link
           href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
           rel="stylesheet"
-        ></link>
+        />
       </Helmet>
       <Navigation />
       <Container className={classes.indexChildrenContainer}>

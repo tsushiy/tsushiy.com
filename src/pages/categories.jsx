@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import _ from "lodash";
 import { Link, graphql } from "gatsby";
-import { Button } from "@material-ui/core";
-import { Container } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../layout";
 import SEO from "../components/SEO";
@@ -22,14 +22,9 @@ const useStyles = makeStyles({
 
 const CategoriesPage = props => {
   const classes = useStyles();
-  const { group } = props.data.allMarkdownRemark;
-  group.sort(function(a, b) {
-    if (a.totalCount < b.totalCount) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  const { data } = props;
+  const { group } = data.allMarkdownRemark;
+  group.sort((a, b) => b.totalCount - a.totalCount);
 
   return (
     <Layout>

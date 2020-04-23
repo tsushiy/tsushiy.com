@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+
 import { Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Layout from "../layout";
@@ -43,7 +43,8 @@ const useStyles = makeStyles({
 
 const IndexPage = props => {
   const classes = useStyles();
-  const postEdges = props.data.allMarkdownRemark.edges;
+  const { data } = props;
+  const postEdges = data.allMarkdownRemark.edges;
 
   return (
     <Layout>

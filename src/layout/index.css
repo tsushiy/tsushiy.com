@@ -5,7 +5,10 @@
 html {
   height: 100%;
   background-color: #fcfcfc;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji"
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Sans Emoji";
 }
 
 body {
@@ -42,7 +45,6 @@ a {
   word-wrap: break-word;
 }
 
-
 h1 {
   font-size: 3em;
   margin: 1.5rem 0 0;
@@ -71,12 +73,11 @@ pre code {
   border: none;
   padding: 0;
   margin: 0;
-
 }
 
 code {
   border-radius: 5px;
-  padding: .3px 3px;
+  padding: 0.3px 3px;
   margin: 0 0;
   border: solid thin #cecece;
   word-wrap: break-word;
@@ -84,7 +85,7 @@ code {
 }
 
 blockquote {
-  border-left: .25em solid;
+  border-left: 0.25em solid;
   margin: 1em;
   padding: 0 1em;
   font-style: italic;
