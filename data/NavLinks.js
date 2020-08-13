@@ -6,9 +6,5 @@ export default [
   {
     name: "Blog",
     url: "/blog/"
-  },
-  {
-    name: "Codernote",
-    url: "https://codernote.tsushiy.com/"
   }
 ];
