@@ -30,7 +30,7 @@ const Footer = () => {
     <footer className={classes.footer}>
       <div className={classes.noticeContainer}>
         <h4>{copyright}</h4>
-        <span>・</span>
+        &nbsp;
         <a
           href={rssUrl}
           target="_blank"
