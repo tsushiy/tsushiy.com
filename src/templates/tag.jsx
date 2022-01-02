@@ -50,9 +50,7 @@ export const pageQuery = graphql`
             tags
             cover {
               childImageSharp {
-                fixed(width: 50, height: 50) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(width: 50, height: 50)
               }
             }
             date

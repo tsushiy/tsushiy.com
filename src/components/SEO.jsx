@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import urljoin from "url-join";
+import { getSrc } from "gatsby-plugin-image"
 import config from "../../data/SiteConfig";
 
 const SEO = props => {
@@ -16,7 +17,7 @@ const SEO = props => {
       ? postMeta.description
       : postNode.excerpt;
     image = postMeta.cover
-      ? postMeta.cover.childImageSharp.fixed.src
+      ? getSrc(postMeta.cover.childImageSharp.gatsbyImageData)
       : config.siteLogo;
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
   } else {

@@ -81,9 +81,7 @@ export const pageQuery = graphql`
         title
         cover {
           childImageSharp {
-            fixed(width: 150, height: 150) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 150, height: 150)
           }
         }
         date
