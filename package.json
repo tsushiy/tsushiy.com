@@ -53,8 +53,7 @@
     "remark-preset-lint-recommended": "^6.1.2",
     "stylelint": "^14.2.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^24.0.0",
-    "write-good": "^1.0.8"
+    "stylelint-config-standard": "^24.0.0"
   },
   "keywords": [
     "tsushiy",
@@ -71,7 +70,6 @@
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/",
-    "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
     "format:styles": "prettier '**/*.{css,scss}' --write"
   },
