@@ -34,9 +34,8 @@ const CategoriesPage = props => {
         <h1>Categories</h1>
         <div className={classes.categoryContainer}>
           {group.map(category => (
-            <Link to={`/categories/${_.kebabCase(category.fieldValue)}`}>
+            <Link key={category.fieldValue} to={`/categories/${_.kebabCase(category.fieldValue)}`}>
               <Button
-                key={category.fieldValue}
                 disableRipple
                 variant="outlined"
                 size="medium"
