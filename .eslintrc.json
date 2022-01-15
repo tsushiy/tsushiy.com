@@ -1,6 +1,14 @@
 {
-  "extends": ["prettier"],
-  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
   "rules": {
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
@@ -23,6 +31,7 @@
   },
   "env": {
     "browser": true,
+    "node": true,
     "es2021": true
   }
 }
