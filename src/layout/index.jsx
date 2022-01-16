@@ -11,7 +11,14 @@ import "./index.css";
 import "katex/dist/katex.min.css";
 import "prismjs/themes/prism-tomorrow.css";
 
-const theme = createTheme()
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#5C6070',
+      contrastText: '#fff',
+    },
+  },
+})
 const IndexChildrenContainer = styled(Container)({
   margin: "1em auto"
 });
