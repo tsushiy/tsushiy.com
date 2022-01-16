@@ -40,9 +40,6 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-relative-images`
-          },
-          {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 690
@@ -87,6 +84,7 @@ module.exports = {
         color: config.themeColor
       }
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
@@ -98,7 +96,7 @@ module.exports = {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: config.pathPrefix,
+        start_url: config.pathPrefix === "" ? "/" : config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",
@@ -116,7 +114,6 @@ module.exports = {
         ]
       }
     },
-    "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-feed",
       options: {

@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -41,14 +41,12 @@ const PostListing = props => {
     <div>
       <List>
         {postList.map(post => {
-          const cover = post.cover.childImageSharp.fixed
-            ? post.cover.childImageSharp.fixed
-            : null;
+          const cover = post.cover.childImageSharp.gatsbyImageData ?? null;
           return (
             <Link to={post.path} key={post.title}>
               <ListItem button disableRipple>
                 <ListItemIcon style={{ margin: "0 15px" }}>
-                  {cover ? <Img fixed={cover} /> : null}
+                  {cover ? <GatsbyImage image={cover} /> : null}
                 </ListItemIcon>
                 <ListItemText
                   className={classes.linkText}
