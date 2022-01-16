@@ -13,8 +13,7 @@ import "prismjs/themes/prism-tomorrow.css";
 
 const theme = createTheme()
 const IndexChildrenContainer = styled(Container)({
-  margin: "1em auto",
-  maxWidth: "880px"
+  margin: "1em auto"
 });
 
 const MainLayout = props => {
@@ -32,7 +31,7 @@ const MainLayout = props => {
         />
       </Helmet>
       <Navigation />
-      <IndexChildrenContainer>
+      <IndexChildrenContainer maxWidth="md">
         {children}
       </IndexChildrenContainer>
     </>

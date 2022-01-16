@@ -46,7 +46,7 @@ const IndexPage = props => {
     <Layout>
       <Helmet title={`${config.siteTitle}`} />
       <SEO />
-      <Container maxWidth="md">
+      <Container>
         <IndexHeader>
           <img
             src={icon}
