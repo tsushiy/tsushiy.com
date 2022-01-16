@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
+import { styled } from '@mui/system';
 import {
   FacebookShareButton,
   PocketShareButton,
@@ -12,20 +12,17 @@ import {
 import urljoin from "url-join";
 import config from "../../data/SiteConfig";
 
-const useStyles = makeStyles({
-  socialLinks: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "left",
-    alignContent: "center",
-    alignItems: "center",
-    margin: "20px 0"
-  }
+const SocialLinksContainer = styled('div')({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "left",
+  alignContent: "center",
+  alignItems: "center",
+  margin: "20px 0"
 });
 
 const SocialLinks = props => {
-  const classes = useStyles();
   const { postNode, postPath, mobile } = props;
   const post = postNode.frontmatter;
   const url = urljoin(config.siteUrl, config.pathPrefix, postPath);
@@ -36,7 +33,7 @@ const SocialLinks = props => {
   );
 
   return (
-    <div className={classes.socialLinks}>
+    <SocialLinksContainer>
       <TwitterShareButton url={url} title={post.title}>
         <TwitterIcon round size={iconSize} />
       </TwitterShareButton>
@@ -49,7 +46,7 @@ const SocialLinks = props => {
       <PocketShareButton url={url} title={post.title}>
         <PocketIcon round size={iconSize} />
       </PocketShareButton>
-    </div>
+    </SocialLinksContainer>
   );
 };
 

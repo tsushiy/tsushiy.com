@@ -1,25 +1,18 @@
 import React from "react";
 import moment from "moment";
 import { GatsbyImage } from "gatsby-plugin-image"
-import { makeStyles } from "@mui/styles";
+import { styled } from '@mui/system';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "gatsby";
 
-const useStyles = makeStyles({
-  linkText: {
-    color: "#222"
-  },
-  listItem: {
-    maxHeight: "120px"
-  }
+const LinkText = styled(ListItemText)({
+  color: "#222"
 });
 
 const PostListing = props => {
-  const classes = useStyles();
-
   const getPostList = () => {
     const postList = [];
     props.postEdges.forEach(postEdge => {
@@ -48,8 +41,7 @@ const PostListing = props => {
                 <ListItemIcon style={{ margin: "0 15px" }}>
                   {cover ? <GatsbyImage image={cover} /> : null}
                 </ListItemIcon>
-                <ListItemText
-                  className={classes.linkText}
+                <LinkText
                   primary={post.title}
                   secondary={moment(post.date).format("MMM Do, YYYY")}
                 />

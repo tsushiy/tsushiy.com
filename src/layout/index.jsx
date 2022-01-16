@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { Container } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { styled } from '@mui/system';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/material/styles';
 import config from "../../data/SiteConfig";
@@ -12,15 +12,12 @@ import "katex/dist/katex.min.css";
 import "prismjs/themes/prism-tomorrow.css";
 
 const theme = createTheme()
-const useStyles = makeStyles({
-  indexChildrenContainer: {
-    margin: "1em auto",
-    maxWidth: "880px"
-  }
+const IndexChildrenContainer = styled(Container)({
+  margin: "1em auto",
+  maxWidth: "880px"
 });
 
 const MainLayout = props => {
-  const classes = useStyles();
   const { children } = props;
 
   return (
@@ -35,9 +32,9 @@ const MainLayout = props => {
         />
       </Helmet>
       <Navigation />
-      <Container className={classes.indexChildrenContainer}>
+      <IndexChildrenContainer>
         {children}
-      </Container>
+      </IndexChildrenContainer>
     </>
   );
 };

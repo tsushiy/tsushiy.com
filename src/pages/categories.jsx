@@ -2,26 +2,22 @@ import React from "react";
 import Helmet from "react-helmet";
 import _ from "lodash";
 import { Link, graphql } from "gatsby";
+import { styled } from '@mui/system';
 import { Button, Container } from "@mui/material";
-
-import { makeStyles } from "@mui/styles";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import config from "../../data/SiteConfig";
 
-const useStyles = makeStyles({
-  categoryContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "left"
-  }
+const CategoriesContainer = styled('div')({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "left"
 });
 
 const CategoriesPage = props => {
-  const classes = useStyles();
   const { data } = props;
   const { group } = data.allMarkdownRemark;
   group.sort((a, b) => b.totalCount - a.totalCount);
@@ -32,7 +28,7 @@ const CategoriesPage = props => {
       <SEO />
       <Container>
         <h1>Categories</h1>
-        <div className={classes.categoryContainer}>
+        <CategoriesContainer>
           {group.map(category => (
             <Link key={category.fieldValue} to={`/categories/${_.kebabCase(category.fieldValue)}`}>
               <Button
@@ -45,7 +41,7 @@ const CategoriesPage = props => {
               </Button>
             </Link>
           ))}
-        </div>
+        </CategoriesContainer>
       </Container>
       <Footer />
     </Layout>
