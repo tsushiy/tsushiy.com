@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Container } from "@material-ui/core";
+import { Container } from "@mui/material";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";

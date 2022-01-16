@@ -1,8 +1,8 @@
 import React from "react";
 import _ from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import { Link } from "gatsby";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 
 const useStyles = makeStyles({
   postCategoryContainer: {

@@ -2,9 +2,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import _ from "lodash";
 import { Link, graphql } from "gatsby";
-import { Button, Container } from "@material-ui/core";
+import { Button, Container } from "@mui/material";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";

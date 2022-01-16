@@ -1,6 +1,6 @@
 import React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@mui/material/IconButton";
+import { makeStyles } from "@mui/styles";
 import config from "../../data/SiteConfig";
 
 const useStyles = makeStyles({

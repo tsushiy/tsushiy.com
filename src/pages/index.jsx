@@ -2,8 +2,8 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Helmet from "react-helmet";
 
-import { Container, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container, Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
