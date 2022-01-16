@@ -1,7 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container } from "@mui/material";
+import { styled } from '@mui/system';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from '@mui/material/styles';
 import config from "../../data/SiteConfig";
 import Navigation from "../components/Navigation";
 import favicon from "../images/favicon.ico";
@@ -9,15 +11,19 @@ import "./index.css";
 import "katex/dist/katex.min.css";
 import "prismjs/themes/prism-tomorrow.css";
 
-const useStyles = makeStyles({
-  indexChildrenContainer: {
-    margin: "1em auto",
-    maxWidth: "880px"
-  }
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#5C6070',
+      contrastText: '#fff',
+    },
+  },
+})
+const IndexChildrenContainer = styled(Container)({
+  margin: "1em auto"
 });
 
 const MainLayout = props => {
-  const classes = useStyles();
   const { children } = props;
 
   return (
@@ -32,11 +38,21 @@ const MainLayout = props => {
         />
       </Helmet>
       <Navigation />
-      <Container className={classes.indexChildrenContainer}>
+      <IndexChildrenContainer maxWidth="md">
         {children}
-      </Container>
+      </IndexChildrenContainer>
     </>
   );
 };
 
-export default MainLayout;
+const AppWrapper = props => {
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <MainLayout {...props} />
+      </ThemeProvider>
+    </StyledEngineProvider>
+  )
+}
+
+export default AppWrapper;

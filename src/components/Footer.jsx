@@ -1,25 +1,22 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from '@mui/system';
 import config from "../../data/SiteConfig";
 
-const useStyles = makeStyles({
-  footer: {
-    justifyContent: "center",
-    alignContent: "center",
-    padding: "10px 5px 5px"
-  },
-  noticeContainer: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-    marginTop: "25px"
-  }
+const FooterContainer = styled('footer')({
+  justifyContent: "center",
+  alignContent: "center",
+  padding: "10px 5px 5px"
+});
+const NoticeContainer = styled('div')({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignContent: "center",
+  alignItems: "center",
+  marginTop: "25px"
 });
 
 const Footer = () => {
-  const classes = useStyles();
   const rssUrl = config.siteUrl + config.siteRss;
   const { copyright } = config;
   if (!copyright) {
@@ -27,8 +24,8 @@ const Footer = () => {
   }
 
   return (
-    <footer className={classes.footer}>
-      <div className={classes.noticeContainer}>
+    <FooterContainer>
+      <NoticeContainer>
         <h4>{copyright}</h4>
         &nbsp;
         <a
@@ -39,8 +36,8 @@ const Footer = () => {
         >
           <i className="fas fa-rss" />
         </a>
-      </div>
-    </footer>
+      </NoticeContainer>
+    </FooterContainer>
   );
 };
 

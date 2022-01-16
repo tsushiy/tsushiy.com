@@ -2,8 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import moment from "moment";
-import { Container, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from '@mui/system';
+import { Container, Typography } from "@mui/material";
 import Layout from "../layout";
 import PostTags from "../components/PostTags";
 import SocialLinks from "../components/SocialLinks";
@@ -11,29 +11,20 @@ import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import config from "../../data/SiteConfig";
 
-const useStyles = makeStyles({
-  postContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  postTitleContainer: {
-    display: "flex",
-    flexDirection: "column"
-  },
-  postTitleMeta: {
-    marginBottom: "3px"
-  },
-  postSocialMeta: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center"
-  }
+const PostTitleContainer = styled('div')({
+  display: "flex",
+  flexDirection: "column"
+});
+const PostTitleMeta = styled('div')({
+  marginBottom: "3px"
+});
+const PostSocialMeta = styled('div')({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center"
 });
 
 const PostTemplate = props => {
-  const classes = useStyles();
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
@@ -49,19 +40,19 @@ const PostTemplate = props => {
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Container>
-        <div className={classes.postTitleContainer}>
+        <PostTitleContainer>
           <h1>{post.title}</h1>
-          <div className={classes.postTitleMeta}>
+          <PostTitleMeta>
             <Typography style={{ margin: "2px 5px" }}>
               {moment(post.date).format("MMMM Do, YYYY")}
             </Typography>
             <PostTags tags={post.tags} category={post.category} />
-          </div>
-        </div>
+          </PostTitleMeta>
+        </PostTitleContainer>
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-        <div className={classes.postSocialMeta}>
+        <PostSocialMeta>
           <SocialLinks postPath={slug} postNode={postNode} />
-        </div>
+        </PostSocialMeta>
         <Footer config={config} />
       </Container>
     </Layout>

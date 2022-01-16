@@ -1,34 +1,31 @@
 import React from "react";
 import _ from "lodash";
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from '@mui/system';
 import { Link } from "gatsby";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 
-const useStyles = makeStyles({
-  postCategoryContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "left",
-    margin: "3px 0"
-  },
-  postTagContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "left",
-    margin: "3px 0"
-  }
+const PostCategoryContainer = styled('div')({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "left",
+  margin: "3px 0"
+});
+const PostTagContainer = styled('div')({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "left",
+  margin: "3px 0"
 });
 
 const PostTags = props => {
-  const classes = useStyles();
   const { tags, category } = props;
   return (
     <div>
-      <div className={classes.postCategoryContainer}>
+      <PostCategoryContainer>
         <h4 style={{ margin: "0 3px 0 5px" }}>Category:</h4>
         <Link
           style={{ textDecoration: "none" }}
@@ -38,8 +35,8 @@ const PostTags = props => {
             {category}
           </Button>
         </Link>
-      </div>
-      <div className={classes.postTagContainer}>
+      </PostCategoryContainer>
+      <PostTagContainer>
         <h4 style={{ margin: "0 3px 0 5px" }}>Tags:</h4>
         {tags &&
           tags.map(tag => (
@@ -53,7 +50,7 @@ const PostTags = props => {
               </Button>
             </Link>
           ))}
-      </div>
+      </PostTagContainer>
     </div>
   );
 };

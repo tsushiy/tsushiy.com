@@ -1,21 +1,17 @@
 import React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@mui/material/IconButton";
+import { styled } from '@mui/system';
 import config from "../../data/SiteConfig";
 
-const useStyles = makeStyles({
-  userLinks: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    alignItems: "center",
-    maxWidth: "100%"
-  }
+const UserLinksContainer = styled('div')({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
+  maxWidth: "100%"
 });
 
 const UserLinks = () => {
-  const classes = useStyles();
-
   const getLinkElements = () => {
     const { userLinks } = config;
     return userLinks.map(link => (
@@ -31,7 +27,7 @@ const UserLinks = () => {
   if (!userLinks) {
     return null;
   }
-  return <div className={classes.userLinks}>{getLinkElements()}</div>;
+  return <UserLinksContainer>{getLinkElements()}</UserLinksContainer>;
 };
 
 export default UserLinks;
