@@ -34,9 +34,8 @@ const TagsPage = props => {
         <h1>Tags</h1>
         <div className={classes.tagContainer}>
           {group.map(tag => (
-            <Link to={`/tags/${_.kebabCase(tag.fieldValue)}`}>
+            <Link key={tag.fieldValue} to={`/tags/${_.kebabCase(tag.fieldValue)}`}>
               <Button
-                key={tag.fieldValue}
                 disableRipple
                 variant="outlined"
                 size="medium"

@@ -1,6 +1,14 @@
 {
-  "extends": ["prettier"],
-  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
   "rules": {
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
@@ -14,7 +22,16 @@
   "settings": {
     "import/core-modules": []
   },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true,
+    "es2021": true
   }
 }
