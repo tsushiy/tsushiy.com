@@ -26,6 +26,12 @@ module.exports = {
         allExtensions: true,
       },
     },
+    {
+      resolve: "gatsby-plugin-graphql-codegen",
+      options: {
+        fileName: "types/graphql-type.d.ts"
+      }
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     {
