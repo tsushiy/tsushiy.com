@@ -68,9 +68,9 @@
     "build": "gatsby build",
     "build:pp": "gatsby build --prefix-paths",
     "clean": "rm -rf public && rm -rf .cache",
-    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:js": "eslint --ext .ts,.tsx .",
     "lint:md": "remark content/",
-    "format:js": "prettier '**/*.{js,jsx}' --write",
+    "format:js": "prettier '**/*.{ts,tsx}' --write",
     "format:styles": "prettier '**/*.{css,scss}' --write",
     "typecheck": "tsc"
   },
