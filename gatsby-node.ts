@@ -1,11 +1,11 @@
 /* eslint "no-console": "off" */
 
-const path = require("path");
-const _ = require("lodash");
-const moment = require("moment");
-const siteConfig = require("./data/SiteConfig");
+import path from "path";
+import _ from "lodash";
+import moment from "moment";
+import siteConfig from "./data/SiteConfig";
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
   if (node.internal.type === "MarkdownRemark") {
@@ -39,7 +39,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve("src/templates/post.tsx");
   const pagePage = path.resolve("src/templates/page.tsx");

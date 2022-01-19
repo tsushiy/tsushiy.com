@@ -1,7 +1,7 @@
-const urljoin = require("url-join");
-const config = require("./data/SiteConfig");
+import urljoin from "url-join";
+import config from "./data/SiteConfig";
 
-module.exports = {
+export default {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
