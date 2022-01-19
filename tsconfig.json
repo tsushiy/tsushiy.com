@@ -7,6 +7,7 @@
     "baseUrl": ".",
     "moduleResolution": "node",
     "strict": true,
+    "strictNullChecks": false,
     "noEmit": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,7 +15,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false
   },
   "include": ["src/**/*", "types/**/*", "gatsby-*.ts"],
   "exclude": ["node_modules", "public"],
