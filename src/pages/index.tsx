@@ -1,5 +1,7 @@
 import React from "react";
+import type { FC } from 'react';
 import { Link, graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 import Helmet from "react-helmet";
 import { styled } from '@mui/system';
 import { Container, Button } from "@mui/material";
@@ -9,6 +11,7 @@ import Footer from "../components/Footer";
 import PostListing from "../components/PostListing";
 import icon from "../images/avatar.jpg";
 import config from "../../data/SiteConfig";
+import { IndexPageQuery } from "types/graphql-type";
 
 const IndexHeader = styled('div')({
   width: "60%",
@@ -38,7 +41,7 @@ const LinksHeader = styled('h2')({
   justifyContent: "space-evenly"
 });
 
-const IndexPage = props => {
+const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
   const { data } = props;
   const postEdges = data.allMarkdownRemark.edges;
 
@@ -80,7 +83,7 @@ const IndexPage = props => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexPage {
     allMarkdownRemark(
       limit: 6
       sort: { fields: [fields___date], order: DESC }

@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from 'react';
 import moment from "moment";
 import { GatsbyImage } from "gatsby-plugin-image"
 import { styled } from '@mui/system';
@@ -7,14 +8,30 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "gatsby";
+import { PostNode } from "types/markdown-node";
+import { MarkdownRemark, MarkdownRemarkFields, MarkdownRemarkFrontmatter, Scalars } from "types/graphql-type";
 
 const LinkText = styled(ListItemText)({
   color: "#222"
 });
 
-const PostListing = props => {
+interface Props {
+  postEdges: Array<{
+    node: PostNode;
+  }>
+}
+
+const PostListing: FC<Props> = (props) => {
   const getPostList = () => {
-    const postList = [];
+    const postList: Array<{
+      path: MarkdownRemarkFields["slug"];
+      tags: MarkdownRemarkFrontmatter["tags"];
+      cover: { childImageSharp?: { gatsbyImageData: Scalars['JSON'] } };
+      title: MarkdownRemarkFrontmatter["title"];
+      date: MarkdownRemarkFrontmatter["date"];
+      excerpt: MarkdownRemark["excerpt"];
+      timeToRead: MarkdownRemark["timeToRead"];
+    }> = [];
     props.postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
@@ -39,7 +56,7 @@ const PostListing = props => {
             <Link to={post.path} key={post.title}>
               <ListItem button disableRipple>
                 <ListItemIcon style={{ margin: "0 15px" }}>
-                  {cover ? <GatsbyImage image={cover} /> : null}
+                  {cover ? <GatsbyImage alt={"cover"} image={cover} /> : null}
                 </ListItemIcon>
                 <LinkText
                   primary={post.title}

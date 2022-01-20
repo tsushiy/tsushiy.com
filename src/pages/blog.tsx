@@ -1,5 +1,7 @@
 import React from "react";
+import type { FC } from 'react';
 import { Link, graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 import Helmet from "react-helmet";
 
 import { Container, Button } from "@mui/material";
@@ -7,8 +9,9 @@ import Layout from "../layout";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import PostListing from "../components/PostListing";
+import { BlogPageQuery } from "types/graphql-type";
 
-const IndexPage = props => {
+const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
   const { data } = props;
   const postEdges = data.allMarkdownRemark.edges;
 
@@ -34,7 +37,7 @@ const IndexPage = props => {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query BlogQuery {
+  query BlogPage {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }

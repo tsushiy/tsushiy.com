@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from 'react';
 import { styled } from '@mui/system';
 import config from "../../data/SiteConfig";
 
@@ -16,7 +17,7 @@ const NoticeContainer = styled('div')({
   marginTop: "25px"
 });
 
-const Footer = () => {
+const Footer: FC = (props) => {
   const rssUrl = config.siteUrl + config.siteRss;
   const { copyright } = config;
   if (!copyright) {

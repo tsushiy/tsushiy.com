@@ -1,10 +1,18 @@
 import React from "react";
+import type { FC } from 'react';
 import Helmet from "react-helmet";
 import urljoin from "url-join";
 import { getSrc } from "gatsby-plugin-image"
 import config from "../../data/SiteConfig";
+import { PostNode } from "types/markdown-node";
 
-const SEO = props => {
+interface Props {
+  postNode?: PostNode;
+  postPath?: string;
+  postSEO?: boolean;
+}
+
+const SEO: FC<Props> = (props) => {
   const { postNode, postPath, postSEO } = props;
   let title;
   let description;

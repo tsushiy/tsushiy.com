@@ -1,13 +1,17 @@
 import React from "react";
+import type { FC } from 'react';
 import { Link, graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 import Helmet from "react-helmet";
 
 import { Container, Button } from "@mui/material";
 import Layout from "../layout";
 import PostListing from "../components/PostListing";
 import config from "../../data/SiteConfig";
+import type { TagPageQuery } from "types/graphql-type";
+import type { TagPageContext } from "gatsby-node";
 
-const TagTemplate = props => {
+const TagTemplate: FC<PageProps<TagPageQuery, TagPageContext>> = (props) => {
   const { data, pageContext } = props;
   const { tag } = pageContext;
   const postEdges = data.allMarkdownRemark.edges;

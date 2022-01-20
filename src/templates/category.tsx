@@ -1,13 +1,17 @@
 import React from "react";
+import type { FC } from 'react';
 import { Link, graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 import Helmet from "react-helmet";
 
 import { Container, Button } from "@mui/material";
 import Layout from "../layout";
 import PostListing from "../components/PostListing";
 import config from "../../data/SiteConfig";
+import type { CategoryPageQuery } from "types/graphql-type";
+import type { CategoryPageContext } from "gatsby-node";
 
-const CategoryTemplate = props => {
+const CategoryTemplate: FC<PageProps<CategoryPageQuery, CategoryPageContext>> = (props) => {
   const { data, pageContext } = props;
   const { category } = pageContext;
   const postEdges = data.allMarkdownRemark.edges;

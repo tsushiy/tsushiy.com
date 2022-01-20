@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from 'react';
 import { Link } from "gatsby";
 import { styled } from '@mui/system';
 import { AppBar, Toolbar, Button } from "@mui/material";
@@ -27,7 +28,7 @@ const UserLinksContainer = styled('div')({
   margin: "0 0 0 auto"
 });
 
-const Navigation = () => {
+const Navigation: FC = (props) => {
   return (
     <NavBar position="sticky">
       <Toolbar variant="dense">

@@ -1,7 +1,9 @@
+import type { GatsbyConfig } from "gatsby";
 import urljoin from "url-join";
 import config from "./data/SiteConfig";
+import { Query } from "types/graphql-type"
 
-export default {
+const gatsbyConfig: GatsbyConfig = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
@@ -138,7 +140,7 @@ export default {
     {
       resolve: "gatsby-plugin-feed",
       options: {
-        setup(ref) {
+        setup(ref: any) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
           return ret;
@@ -161,9 +163,9 @@ export default {
       `,
         feeds: [
           {
-            serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+            serialize({ query: { site, allMarkdownRemark } }: { query: Query }) {
+              const { rssMetadata } = site.siteMetadata;
+              return allMarkdownRemark.edges.map((edge: any) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
@@ -212,3 +214,5 @@ export default {
     }
   ]
 };
+
+export default gatsbyConfig;
