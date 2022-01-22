@@ -15,8 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*", "types/**/*", "gatsby-*.ts"],
   "exclude": ["node_modules", "public"],
