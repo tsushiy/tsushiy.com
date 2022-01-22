@@ -1,19 +1,21 @@
-import React from "react";
-import type { FC } from 'react';
-import { Link, graphql } from "gatsby";
-import type { PageProps } from "gatsby";
-import Helmet from "react-helmet";
+import { Container, Button } from '@mui/material'
+import { Link, graphql } from 'gatsby'
+import React from 'react'
+import Helmet from 'react-helmet'
 
-import { Container, Button } from "@mui/material";
-import Layout from "../layout";
-import SEO from "../components/SEO";
-import Footer from "../components/Footer";
-import PostListing from "../components/PostListing";
-import { BlogPageQuery } from "types/graphql-type";
+import { BlogPageQuery } from 'types/graphql-type'
+
+import Footer from '../components/Footer'
+import PostListing from '../components/PostListing'
+import SEO from '../components/SEO'
+import Layout from '../layout'
+
+import type { PageProps } from 'gatsby'
+import type { FC } from 'react'
 
 const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
-  const { data } = props;
-  const postEdges = data.allMarkdownRemark.edges;
+  const { data } = props
+  const postEdges = data.allMarkdownRemark.edges
 
   return (
     <Layout>
@@ -21,20 +23,20 @@ const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
       <SEO />
       <Container>
         <h2>Articles</h2>
-        <Link style={{ margin: "0 5px" }} to="/categories">
+        <Link style={{ margin: '0 5px' }} to="/categories">
           <Button variant="outlined">Categories</Button>
         </Link>
-        <Link style={{ margin: "0 5px" }} to="/tags">
+        <Link style={{ margin: '0 5px' }} to="/tags">
           <Button variant="outlined">Tags</Button>
         </Link>
         <PostListing postEdges={postEdges} />
       </Container>
       <Footer />
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query BlogPage {
@@ -67,4 +69,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -1,21 +1,23 @@
-import React from "react";
-import type { FC } from 'react';
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import type { PageProps } from "gatsby";
-import { Container } from "@mui/material";
-import Layout from "../layout";
-import SEO from "../components/SEO";
-import Footer from "../components/Footer";
-import config from "../../data/SiteConfig";
-import type { PageBySlugQuery } from "types/graphql-type";
-import type { PostPageContext } from "gatsby-node";
+import { Container } from '@mui/material'
+import { graphql } from 'gatsby'
+import React from 'react'
+import Helmet from 'react-helmet'
+
+import config from '../../data/SiteConfig'
+import Footer from '../components/Footer'
+import SEO from '../components/SEO'
+import Layout from '../layout'
+
+import type { PageProps } from 'gatsby'
+import type { PostPageContext } from 'gatsby-node'
+import type { FC } from 'react'
+import type { PageBySlugQuery } from 'types/graphql-type'
 
 const PageTemplate: FC<PageProps<PageBySlugQuery, PostPageContext>> = (props) => {
-  const { data, pageContext } = props;
-  const { slug } = pageContext;
-  const postNode = data.markdownRemark;
-  const post = postNode.frontmatter;
+  const { data, pageContext } = props
+  const { slug } = pageContext
+  const postNode = data.markdownRemark
+  const post = postNode.frontmatter
 
   return (
     <Layout>
@@ -29,10 +31,10 @@ const PageTemplate: FC<PageProps<PageBySlugQuery, PostPageContext>> = (props) =>
         <Footer />
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default PageTemplate;
+export default PageTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -51,4 +53,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
