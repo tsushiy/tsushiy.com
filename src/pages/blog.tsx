@@ -1,15 +1,17 @@
-import React from 'react'
-import type { FC } from 'react'
+import { Container, Button } from '@mui/material'
 import { Link, graphql } from 'gatsby'
-import type { PageProps } from 'gatsby'
+import React from 'react'
 import Helmet from 'react-helmet'
 
-import { Container, Button } from '@mui/material'
-import Layout from '../layout'
-import SEO from '../components/SEO'
+import { BlogPageQuery } from 'types/graphql-type'
+
 import Footer from '../components/Footer'
 import PostListing from '../components/PostListing'
-import { BlogPageQuery } from 'types/graphql-type'
+import SEO from '../components/SEO'
+import Layout from '../layout'
+
+import type { PageProps } from 'gatsby'
+import type { FC } from 'react'
 
 const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
   const { data } = props

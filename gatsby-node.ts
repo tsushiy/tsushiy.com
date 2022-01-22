@@ -1,10 +1,13 @@
 /* eslint "no-console": "off" */
 
-import type { GatsbyNode } from 'gatsby'
 import path from 'path'
+
 import _ from 'lodash'
 import moment from 'moment'
+
 import siteConfig from './data/SiteConfig'
+
+import type { GatsbyNode } from 'gatsby'
 import type { MarkdownRemark, MarkdownRemarkConnection } from 'types/graphql-type'
 
 export interface PostPageContext {
@@ -47,7 +50,7 @@ export const onCreateNode: GatsbyNode<MarkdownRemark>['onCreateNode'] = ({ node,
         slug = `/${_.kebabCase(node.frontmatter.slug)}`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
-        if (!date.isValid) console.warn(`WARNING: Invalid date.`, node.frontmatter)
+        if (!date.isValid) console.warn('WARNING: Invalid date.', node.frontmatter)
 
         createNodeField({ node, name: 'date', value: date.toISOString() })
       }

@@ -1,7 +1,9 @@
-import React from 'react'
-import type { FC } from 'react'
 import { styled } from '@mui/system'
+import React from 'react'
+
 import config from '../../data/SiteConfig'
+
+import type { FC } from 'react'
 
 const FooterContainer = styled('footer')({
   justifyContent: 'center',

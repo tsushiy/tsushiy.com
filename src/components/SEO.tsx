@@ -1,11 +1,14 @@
+import { getSrc } from 'gatsby-plugin-image'
 import React from 'react'
-import type { FC } from 'react'
 import Helmet from 'react-helmet'
 import { BlogPosting, BreadcrumbList, WebSite, WithContext } from 'schema-dts'
 import urljoin from 'url-join'
-import { getSrc } from 'gatsby-plugin-image'
-import config from '../../data/SiteConfig'
+
 import { PostNode } from 'types/markdown-node'
+
+import config from '../../data/SiteConfig'
+
+import type { FC } from 'react'
 
 interface Props {
   postNode?: PostNode
@@ -31,7 +34,7 @@ const SEO: FC<Props> = (props) => {
     image = config.siteLogo
   }
 
-  if (!image.match(`(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`))
+  if (!image.match('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]'))
     image = urljoin(config.siteUrl, config.pathPrefix, image)
 
   const blogURL = urljoin(config.siteUrl, config.pathPrefix)

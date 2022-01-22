@@ -1,8 +1,10 @@
-import React from 'react'
-import type { FC } from 'react'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/system'
+import React from 'react'
+
 import config from '../../data/SiteConfig'
+
+import type { FC } from 'react'
 
 const UserLinksContainer = styled('div')({
   display: 'flex',

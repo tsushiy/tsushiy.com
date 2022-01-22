@@ -1,15 +1,16 @@
-import React from 'react'
-import type { FC } from 'react'
+import { Container, Button } from '@mui/material'
 import { Link, graphql } from 'gatsby'
-import type { PageProps } from 'gatsby'
+import React from 'react'
 import Helmet from 'react-helmet'
 
-import { Container, Button } from '@mui/material'
-import Layout from '../layout'
-import PostListing from '../components/PostListing'
 import config from '../../data/SiteConfig'
-import type { CategoryPageQuery } from 'types/graphql-type'
+import PostListing from '../components/PostListing'
+import Layout from '../layout'
+
+import type { PageProps } from 'gatsby'
 import type { CategoryPageContext } from 'gatsby-node'
+import type { FC } from 'react'
+import type { CategoryPageQuery } from 'types/graphql-type'
 
 const CategoryTemplate: FC<PageProps<CategoryPageQuery, CategoryPageContext>> = (props) => {
   const { data, pageContext } = props

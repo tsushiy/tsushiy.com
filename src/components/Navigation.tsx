@@ -1,10 +1,13 @@
-import React from 'react'
-import type { FC } from 'react'
-import { Link } from 'gatsby'
-import { styled } from '@mui/system'
 import { AppBar, Toolbar, Button } from '@mui/material'
+import { styled } from '@mui/system'
+import { Link } from 'gatsby'
+import React from 'react'
+
 import NavLinks from '../../data/NavLinks'
+
 import UserLinks from './UserLinks'
+
+import type { FC } from 'react'
 
 const NavBar = styled(AppBar)({
   backgroundColor: '#F0F0F0',

@@ -1,6 +1,5 @@
-import React from 'react'
-import type { FC } from 'react'
 import { styled } from '@mui/system'
+import React from 'react'
 import {
   FacebookShareButton,
   PocketShareButton,
@@ -11,8 +10,12 @@ import {
   TwitterIcon
 } from 'react-share'
 import urljoin from 'url-join'
-import config from '../../data/SiteConfig'
+
 import { PostNode } from 'types/markdown-node'
+
+import config from '../../data/SiteConfig'
+
+import type { FC } from 'react'
 
 const SocialLinksContainer = styled('div')({
   display: 'flex',

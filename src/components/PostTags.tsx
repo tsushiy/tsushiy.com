@@ -1,10 +1,12 @@
-import React from 'react'
-import type { FC } from 'react'
-import _ from 'lodash'
+import { Button } from '@mui/material'
 import { styled } from '@mui/system'
 import { Link } from 'gatsby'
-import { Button } from '@mui/material'
+import _ from 'lodash'
+import React from 'react'
+
 import { MarkdownRemarkFrontmatter } from 'types/graphql-type'
+
+import type { FC } from 'react'
 
 const PostCategoryContainer = styled('div')({
   display: 'flex',

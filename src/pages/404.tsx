@@ -1,12 +1,14 @@
-import React from 'react'
-import type { FC } from 'react'
-import Helmet from 'react-helmet'
-import type { PageProps } from 'gatsby'
 import { Container } from '@mui/material'
-import Layout from '../layout'
-import SEO from '../components/SEO'
-import Footer from '../components/Footer'
+import React from 'react'
+import Helmet from 'react-helmet'
+
 import config from '../../data/SiteConfig'
+import Footer from '../components/Footer'
+import SEO from '../components/SEO'
+import Layout from '../layout'
+
+import type { PageProps } from 'gatsby'
+import type { FC } from 'react'
 
 const NotFoundPage: FC<PageProps> = (props) => {
   return (

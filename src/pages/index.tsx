@@ -1,17 +1,20 @@
-import React from 'react'
-import type { FC } from 'react'
-import { Link, graphql } from 'gatsby'
-import type { PageProps } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Button, Container } from '@mui/material'
 import { styled } from '@mui/system'
-import { Container, Button } from '@mui/material'
-import Layout from '../layout'
-import SEO from '../components/SEO'
+import { graphql, Link } from 'gatsby'
+import React from 'react'
+import Helmet from 'react-helmet'
+
+import { IndexPageQuery } from 'types/graphql-type'
+
+import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
 import PostListing from '../components/PostListing'
+import SEO from '../components/SEO'
 import icon from '../images/avatar.jpg'
-import config from '../../data/SiteConfig'
-import { IndexPageQuery } from 'types/graphql-type'
+import Layout from '../layout'
+
+import type { PageProps } from 'gatsby'
+import type { FC } from 'react'
 
 const IndexHeader = styled('div')({
   width: '60%',

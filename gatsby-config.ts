@@ -1,7 +1,10 @@
-import type { GatsbyConfig } from 'gatsby'
 import urljoin from 'url-join'
-import config from './data/SiteConfig'
+
 import { Query } from 'types/graphql-type'
+
+import config from './data/SiteConfig'
+
+import type { GatsbyConfig } from 'gatsby'
 
 const gatsbyConfig: GatsbyConfig = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
@@ -21,7 +24,7 @@ const gatsbyConfig: GatsbyConfig = {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
-        jsxPragma: `jsx`,
+        jsxPragma: 'jsx',
         allExtensions: true
       }
     },
@@ -59,14 +62,14 @@ const gatsbyConfig: GatsbyConfig = {
             }
           },
           {
-            resolve: `gatsby-remark-katex`,
+            resolve: 'gatsby-remark-katex',
             options: {
               // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
+              strict: 'ignore'
             }
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
@@ -99,10 +102,10 @@ const gatsbyConfig: GatsbyConfig = {
     },
     'gatsby-plugin-image',
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         defaults: {
-          placeholder: `blurred`
+          placeholder: 'blurred'
         }
       }
     },
