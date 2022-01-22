@@ -19,7 +19,7 @@ const NoticeContainer = styled('div')({
   marginTop: '25px'
 })
 
-const Footer: FC = (props) => {
+const Footer: FC = () => {
   const rssUrl = config.siteUrl + config.siteRss
   const { copyright } = config
   if (!copyright) {

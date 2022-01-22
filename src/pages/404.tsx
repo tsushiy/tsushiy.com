@@ -10,7 +10,7 @@ import Layout from '../layout'
 import type { PageProps } from 'gatsby'
 import type { FC } from 'react'
 
-const NotFoundPage: FC<PageProps> = (props) => {
+const NotFoundPage: FC<PageProps> = () => {
   return (
     <Layout>
       <SEO />

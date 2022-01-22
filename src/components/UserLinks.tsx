@@ -14,7 +14,7 @@ const UserLinksContainer = styled('div')({
   maxWidth: '100%'
 })
 
-const UserLinks: FC = (props) => {
+const UserLinks: FC = () => {
   const getLinkElements = () => {
     const { userLinks } = config
     return userLinks.map((link) => (

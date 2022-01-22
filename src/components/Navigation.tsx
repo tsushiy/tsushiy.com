@@ -31,7 +31,7 @@ const UserLinksContainer = styled('div')({
   margin: '0 0 0 auto'
 })
 
-const Navigation: FC = (props) => {
+const Navigation: FC = () => {
   return (
     <NavBar position="sticky">
       <Toolbar variant="dense">

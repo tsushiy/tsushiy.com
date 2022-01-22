@@ -68,6 +68,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
 
   // Get a full list of markdown posts
   const markdownQueryResult: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     errors?: any
     data?: { allMarkdownRemark: MarkdownRemarkConnection }
   } = await graphql(`

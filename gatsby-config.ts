@@ -140,6 +140,7 @@ const gatsbyConfig: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-feed',
       options: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         setup(ref: any) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
@@ -165,6 +166,7 @@ const gatsbyConfig: GatsbyConfig = {
           {
             serialize({ query: { site, allMarkdownRemark } }: { query: Query }) {
               const { rssMetadata } = site.siteMetadata
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               return allMarkdownRemark.edges.map((edge: any) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
