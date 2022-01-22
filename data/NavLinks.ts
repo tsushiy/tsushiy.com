@@ -1,10 +1,10 @@
 export default [
   {
-    name: "About",
-    url: "/about/"
+    name: 'About',
+    url: '/about/'
   },
   {
-    name: "Blog",
-    url: "/blog/"
+    name: 'Blog',
+    url: '/blog/'
   }
-];
+]
