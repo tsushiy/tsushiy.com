@@ -71,17 +71,20 @@
   "main": "n/a",
   "scripts": {
     "ts-gatsby": "ts-node ./node_modules/.bin/gatsby",
-    "develop": "npm run ts-gatsby develop",
-    "dev": "npm run develop",
-    "serve": "npm run ts-gatsby serve",
-    "build": "npm run ts-gatsby build",
-    "build:pp": "npm run ts-gatsby build --prefix-paths",
+    "develop": "yarn ts-gatsby develop",
+    "dev": "yarn develop",
+    "serve": "yarn ts-gatsby serve",
+    "build": "yarn ts-gatsby build",
     "clean": "rm -rf public && rm -rf .cache",
-    "lint:js": "eslint --ext .ts,.tsx .",
-    "lint:md": "remark content/",
-    "format:js": "prettier '**/*.{ts,tsx}' --write",
-    "format:styles": "prettier '**/*.{css,scss}' --write",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint:eslint": "eslint --ext .ts,.tsx .",
+    "lint:prettier": "prettier --check '**/*.{ts,tsx}'",
+    "lint:stylelint": "prettier --check '**/*.{css,scss}'",
+    "lint:remark": "remark content/",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:prettier": "yarn lint:prettier --write",
+    "fix:stylelint": "yarn lint:stylelint --write",
+    "fix": "run-s fix:eslint fix:prettier fix:stylelint"
   },
   "remarkConfig": {
     "plugins": [
