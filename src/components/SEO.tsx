@@ -1,6 +1,7 @@
 import React from "react";
 import type { FC } from 'react';
 import Helmet from "react-helmet";
+import { BlogPosting, BreadcrumbList, WebSite, WithContext } from "schema-dts"
 import urljoin from "url-join";
 import { getSrc } from "gatsby-plugin-image"
 import config from "../../data/SiteConfig";
@@ -42,9 +43,9 @@ const SEO: FC<Props> = (props) => {
     image = urljoin(config.siteUrl, config.pathPrefix, image);
 
   const blogURL = urljoin(config.siteUrl, config.pathPrefix);
-  const schemaOrgJSONLD = [
+  const schemaOrgJSONLD: Array<WithContext<WebSite | BreadcrumbList | BlogPosting>> = [
     {
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
       "@type": "WebSite",
       url: blogURL,
       name: title,
@@ -54,7 +55,7 @@ const SEO: FC<Props> = (props) => {
   if (postSEO) {
     schemaOrgJSONLD.push(
       {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
           {
@@ -69,7 +70,7 @@ const SEO: FC<Props> = (props) => {
         ]
       },
       {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "BlogPosting",
         url: blogURL,
         name: title,
