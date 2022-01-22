@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonJS",
+    "lib": ["es2021", "dom"],
+    "jsx": "react",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "strict": true,
+    "strictNullChecks": false,
+    "noEmit": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*", "types/**/*", "gatsby-*.ts"],
+  "exclude": ["node_modules", "public"],
+  "compileOnSave": false
+}

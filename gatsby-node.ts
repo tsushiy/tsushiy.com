@@ -1,16 +1,34 @@
 /* eslint "no-console": "off" */
 
-const path = require("path");
-const _ = require("lodash");
-const moment = require("moment");
-const siteConfig = require("./data/SiteConfig");
+import type { GatsbyNode } from "gatsby";
+import path from "path";
+import _ from "lodash";
+import moment from "moment";
+import siteConfig from "./data/SiteConfig";
+import type { MarkdownRemark, MarkdownRemarkConnection } from "types/graphql-type";
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
+export interface PostPageContext {
+  slug: string;
+  nexttitle: string;
+  nextslug: string;
+  prevtitle: string;
+  prevslug: string;
+}
+
+export interface TagPageContext {
+  tag: string;
+}
+
+export interface CategoryPageContext {
+  category: string;
+}
+
+export const onCreateNode: GatsbyNode<MarkdownRemark>["onCreateNode"] = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
   let slug;
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
-    const parsedFilePath = path.parse(fileNode.relativePath);
+    const parsedFilePath = path.parse(fileNode.relativePath as string);
     if (
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
@@ -39,15 +57,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const postPage = path.resolve("src/templates/post.jsx");
-  const pagePage = path.resolve("src/templates/page.jsx");
-  const tagPage = path.resolve("src/templates/tag.jsx");
-  const categoryPage = path.resolve("src/templates/category.jsx");
+  const postPage = path.resolve("src/templates/post.tsx");
+  const pagePage = path.resolve("src/templates/page.tsx");
+  const tagPage = path.resolve("src/templates/tag.tsx");
+  const categoryPage = path.resolve("src/templates/category.tsx");
 
   // Get a full list of markdown posts
-  const markdownQueryResult = await graphql(`
+  const markdownQueryResult: {
+    errors?: any;
+    data?: { allMarkdownRemark: MarkdownRemarkConnection }
+  } = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -73,10 +94,10 @@ exports.createPages = async ({ graphql, actions }) => {
     throw markdownQueryResult.errors;
   }
 
-  const tagSet = new Set();
-  const categorySet = new Set();
+  const tagSet = new Set<string>();
+  const categorySet = new Set<string>();
 
-  const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
+  const postsEdges = markdownQueryResult?.data?.allMarkdownRemark?.edges;
 
   // Sort posts
   postsEdges.sort((postA, postB) => {
@@ -118,7 +139,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const component =
       edge.node.frontmatter.template === "post" ? postPage : pagePage;
 
-    createPage({
+    createPage<PostPageContext>({
       path: edge.node.fields.slug,
       component,
       context: {
@@ -133,7 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   //  Create tag pages
   tagSet.forEach(tag => {
-    createPage({
+    createPage<TagPageContext>({
       path: `/tags/${_.kebabCase(tag)}/`,
       component: tagPage,
       context: { tag }
@@ -142,7 +163,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create category pages
   categorySet.forEach(category => {
-    createPage({
+    createPage<CategoryPageContext>({
       path: `/categories/${_.kebabCase(category)}/`,
       component: categoryPage,
       context: { category }

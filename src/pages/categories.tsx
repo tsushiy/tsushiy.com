@@ -1,13 +1,16 @@
 import React from "react";
+import type { FC } from 'react';
 import Helmet from "react-helmet";
 import _ from "lodash";
 import { Link, graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 import { styled } from '@mui/system';
 import { Button, Container } from "@mui/material";
 import Layout from "../layout";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import config from "../../data/SiteConfig";
+import { CategoriesPageQuery } from "types/graphql-type";
 
 const CategoriesContainer = styled('div')({
   display: "flex",
@@ -17,7 +20,7 @@ const CategoriesContainer = styled('div')({
   justifyContent: "left"
 });
 
-const CategoriesPage = props => {
+const CategoriesPage: FC<PageProps<CategoriesPageQuery>> = (props) => {
   const { data } = props;
   const { group } = data.allMarkdownRemark;
   group.sort((a, b) => b.totalCount - a.totalCount);
@@ -51,7 +54,7 @@ const CategoriesPage = props => {
 export default CategoriesPage;
 
 export const pageQuery = graphql`
-  query CategoriesQuery {
+  query CategoriesPage {
     allMarkdownRemark(limit: 1000) {
       group(field: frontmatter___category) {
         fieldValue

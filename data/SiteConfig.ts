@@ -21,6 +21,8 @@ const config = {
       iconClassName: "fab fa-github"
     }
   ],
+  siteFBAppID: "",
+  userTwitter: "",
   copyright: "© 2019-2020 tsushiy", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0" // Used for setting manifest background color.
@@ -44,4 +46,4 @@ if (config.siteUrl.substr(-1) === "/")
 if (config.siteRss && config.siteRss[0] !== "/")
   config.siteRss = `/${config.siteRss}`;
 
-module.exports = config;
+export default config;

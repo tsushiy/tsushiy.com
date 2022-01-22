@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from 'react';
 import Helmet from "react-helmet";
 import { Container } from "@mui/material";
 import { styled } from '@mui/system';
@@ -23,9 +24,7 @@ const IndexChildrenContainer = styled(Container)({
   margin: "1em auto"
 });
 
-const MainLayout = props => {
-  const { children } = props;
-
+const MainLayout: FC = ({ children }) => {
   return (
     <>
       <Helmet>
@@ -45,7 +44,7 @@ const MainLayout = props => {
   );
 };
 
-const AppWrapper = props => {
+const AppWrapper: FC = (props) => {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>

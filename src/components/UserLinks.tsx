@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from 'react';
 import IconButton from "@mui/material/IconButton";
 import { styled } from '@mui/system';
 import config from "../../data/SiteConfig";
@@ -11,7 +12,7 @@ const UserLinksContainer = styled('div')({
   maxWidth: "100%"
 });
 
-const UserLinks = () => {
+const UserLinks: FC = (props) => {
   const getLinkElements = () => {
     const { userLinks } = config;
     return userLinks.map(link => (

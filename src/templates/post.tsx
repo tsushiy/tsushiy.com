@@ -1,6 +1,8 @@
 import React from "react";
+import type { FC } from 'react';
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 import moment from "moment";
 import { styled } from '@mui/system';
 import { Container, Typography } from "@mui/material";
@@ -10,6 +12,8 @@ import SocialLinks from "../components/SocialLinks";
 import SEO from "../components/SEO";
 import Footer from "../components/Footer";
 import config from "../../data/SiteConfig";
+import type { BlogPostBySlugQuery } from "types/graphql-type";
+import type { PostPageContext } from "gatsby-node";
 
 const PostTitleContainer = styled('div')({
   display: "flex",
@@ -24,14 +28,11 @@ const PostSocialMeta = styled('div')({
   justifyContent: "center"
 });
 
-const PostTemplate = props => {
+const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props) => {
   const { data, pageContext } = props;
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
-  if (!post.id) {
-    post.id = slug;
-  }
 
   return (
     <Layout>
@@ -53,7 +54,7 @@ const PostTemplate = props => {
         <PostSocialMeta>
           <SocialLinks postPath={slug} postNode={postNode} />
         </PostSocialMeta>
-        <Footer config={config} />
+        <Footer />
       </Container>
     </Layout>
   );

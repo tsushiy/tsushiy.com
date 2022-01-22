@@ -1,8 +1,10 @@
 import React from "react";
+import type { FC } from 'react';
 import _ from "lodash";
 import { styled } from '@mui/system';
 import { Link } from "gatsby";
 import { Button } from "@mui/material";
+import { MarkdownRemarkFrontmatter } from "types/graphql-type";
 
 const PostCategoryContainer = styled('div')({
   display: "flex",
@@ -21,7 +23,12 @@ const PostTagContainer = styled('div')({
   margin: "3px 0"
 });
 
-const PostTags = props => {
+interface Props {
+  tags: MarkdownRemarkFrontmatter["tags"];
+  category: MarkdownRemarkFrontmatter["category"];
+}
+
+const PostTags: FC<Props> = (props) => {
   const { tags, category } = props;
   return (
     <div>
