@@ -22,9 +22,7 @@ const SEO: FC<Props> = (props) => {
   if (postSEO) {
     const postMeta = postNode.frontmatter;
     ({ title } = postMeta);
-    description = postMeta.description
-      ? postMeta.description
-      : postNode.excerpt;
+    description = postNode.excerpt;
     image = postMeta.cover
       ? getSrc(postMeta.cover.childImageSharp.gatsbyImageData)
       : config.siteLogo;
