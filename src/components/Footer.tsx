@@ -1,3 +1,5 @@
+import { faRss } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { styled } from '@mui/system'
 import React from 'react'
 
@@ -32,7 +34,7 @@ const Footer: FC = () => {
         <h4>{copyright}</h4>
         &nbsp;
         <a href={rssUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#444' }}>
-          <i className="fas fa-rss" />
+          <FontAwesomeIcon icon={faRss} />
         </a>
       </NoticeContainer>
     </FooterContainer>

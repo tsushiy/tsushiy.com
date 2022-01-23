@@ -14,13 +14,7 @@ const config = {
   postsPerPage: 4, // Amount of posts displayed per listing page.
   userName: 'tsushiy', // Username to display in the author segment.
   userEmail: '', // Email used for RSS feed's author segment
-  userLinks: [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/tsushiy',
-      iconClassName: 'fab fa-github'
-    }
-  ],
+  gitHubUrl: 'https://github.com/tsushiy',
   siteFBAppID: '',
   userTwitter: '',
   copyright: '© 2019-2020 tsushiy', // Copyright string for the footer of the website and RSS feed.
