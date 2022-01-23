@@ -8,26 +8,26 @@ template: "page"
 
 東北大学大学院 情報科学研究科 修士2年
 
-<h2><i class="far fa-smile"></i> Interest</h2>
+<h2>🙂 Interest</h2>
 
 * 機械学習
 * 競技プログラミング
     * AtCoder: [ponponpainful](https://atcoder.jp/users/ponponpainful)
 * 写真
 
-<h2><i class="fas fa-star"></i> Skill</h2>
+<h2>⭐️ Skill</h2>
 
 * C++
 * Golang
 * Python
 * TypeScript
 
-<h2><i class="fas fa-graduation-cap"></i> Education</h2>
+<h2>🎓 Education</h2>
 
 * **2019 -** 東北大学大学院 情報科学研究科 システム情報科学専攻 修士課程 - Graduate School of Information Sciences, Tohoku University
 * **2015 - 2019** 東北大学 工学部 電気情報物理工学科 - School of Engineering, Tohoku University
 
-<h2><i class="fas fa-chart-line"></i> Activity</h2>
+<h2>🏅 Activity</h2>
 
 * **2019 Nov.** ICPC Asia Yokohama Regional Contest
 * **2019 Oct.** JPHACKS 仙台大会 最優秀賞
