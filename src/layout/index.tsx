@@ -6,7 +6,6 @@ import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
 import Navigation from '../components/Navigation'
-import favicon from '../images/favicon.ico'
 
 import type { FC } from 'react'
 import './index.css'
@@ -31,7 +30,6 @@ const MainLayout: FC = ({ children }) => {
       <Helmet>
         <meta name="description" content={config.siteDescription} />
         <html lang="ja" />
-        <link rel="icon" href={favicon} />
       </Helmet>
       <Navigation />
       <IndexChildrenContainer maxWidth="md">{children}</IndexChildrenContainer>
