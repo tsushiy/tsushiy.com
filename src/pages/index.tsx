@@ -55,7 +55,7 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
       <Container>
         <IndexHeader>
           <StaticImage
-            src={'../images/avatar.jpg'}
+            src={'../images/avatar.png'}
             className="newsletter-avatar"
             alt="tsushiy"
             width={115}
