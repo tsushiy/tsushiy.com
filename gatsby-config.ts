@@ -119,6 +119,7 @@ const gatsbyConfig: GatsbyConfig = {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
+        lang: 'ja',
         start_url: config.pathPrefix === '' ? '/' : config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
