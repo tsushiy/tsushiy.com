@@ -1,11 +1,11 @@
 const config = {
   siteTitle: 'tsushiy.com', // Site title.
-  siteTitleShort: 'tsushiy', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: 'tsushiy', // Alternative site title for SEO.
-  siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
+  siteTitleShort: 'tsushiy.com', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteTitleAlt: 'tsushiy.com', // Alternative site title for SEO.
+  siteLogo: '/logos/avatar.png', // Logo used for SEO and manifest.
   siteUrl: 'https://tsushiy.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: 'tsushiyの個人ブログ。', // Website description used for RSS feeds/meta description tag.
+  siteDescription: 'tsushiyの個人ブログ', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssTitle: 'tsushiy.com', // Title of the RSS feed
   googleAnalyticsID: 'UA-136429373-4', // GA tracking ID.
@@ -18,7 +18,7 @@ const config = {
   siteFBAppID: '',
   userTwitter: '',
   copyright: '© tsushiy', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#c62828', // Used for setting manifest and progress theme colors.
+  themeColor: '#a7d28d', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0' // Used for setting manifest background color.
 }
 
