@@ -1,6 +1,7 @@
 import { Button, Container } from '@mui/material'
 import { styled } from '@mui/system'
 import { graphql, Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import Helmet from 'react-helmet'
 
@@ -10,7 +11,6 @@ import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
-import icon from '../images/avatar.jpg'
 import Layout from '../layout'
 
 import type { PageProps } from 'gatsby'
@@ -54,7 +54,13 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
       <SEO />
       <Container>
         <IndexHeader>
-          <img src={icon} className="newsletter-avatar" alt="tsushiy" width="115px" style={{ borderRadius: '50%' }} />
+          <StaticImage
+            src={'../images/avatar.jpg'}
+            className="newsletter-avatar"
+            alt="tsushiy"
+            width={115}
+            style={{ borderRadius: '50%' }}
+          />
           <h1 style={{ margin: '0' }}>tsushiy</h1>
         </IndexHeader>
         <LinksContainer>
