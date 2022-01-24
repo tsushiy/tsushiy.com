@@ -34,6 +34,7 @@ const gatsbyConfig: GatsbyConfig = {
         fileName: 'types/graphql-type.d.ts'
       }
     },
+    'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     {
@@ -50,7 +51,6 @@ const gatsbyConfig: GatsbyConfig = {
         path: `${__dirname}/content/`
       }
     },
-    'gatsby-plugin-material-ui',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

@@ -1,6 +1,5 @@
 import { Container } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { StyledEngineProvider } from '@mui/material/styles'
 import { styled } from '@mui/system'
 import React from 'react'
 import Helmet from 'react-helmet'
@@ -42,11 +41,9 @@ const MainLayout: FC = ({ children }) => {
 
 const AppWrapper: FC = (props) => {
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <MainLayout {...props} />
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider theme={theme}>
+      <MainLayout {...props} />
+    </ThemeProvider>
   )
 }
 
