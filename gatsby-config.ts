@@ -15,7 +15,7 @@ const gatsbyConfig: GatsbyConfig = {
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/logos/logo-512.png`,
+      image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/logos/avatar.png`,
       copyright: config.copyright
     }
   },
