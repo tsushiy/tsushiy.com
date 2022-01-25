@@ -247,6 +247,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   jsxRuntime?: Maybe<Scalars['String']>;
@@ -276,7 +278,6 @@ export type SiteSiteMetadataRssMetadata = {
   feed_url?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  image_url?: Maybe<Scalars['String']>;
   copyright?: Maybe<Scalars['String']>;
 };
 
@@ -414,10 +415,11 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
   slug?: Maybe<Scalars['String']>;
-  cover?: Maybe<File>;
+  emoji?: Maybe<Scalars['String']>;
   template?: Maybe<Scalars['String']>;
   category?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  cover?: Maybe<File>;
 };
 
 
@@ -835,6 +837,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -1058,10 +1062,11 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
-  cover?: InputMaybe<FileFilterInput>;
+  emoji?: InputMaybe<StringQueryOperatorInput>;
   template?: InputMaybe<StringQueryOperatorInput>;
   category?: InputMaybe<StringQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
+  cover?: InputMaybe<FileFilterInput>;
 };
 
 export type FileFilterInput = {
@@ -1322,6 +1327,10 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___slug'
+  | 'childrenMarkdownRemark___frontmatter___emoji'
+  | 'childrenMarkdownRemark___frontmatter___template'
+  | 'childrenMarkdownRemark___frontmatter___category'
+  | 'childrenMarkdownRemark___frontmatter___tags'
   | 'childrenMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childrenMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childrenMarkdownRemark___frontmatter___cover___relativePath'
@@ -1360,9 +1369,6 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childrenMarkdownRemark___frontmatter___cover___id'
   | 'childrenMarkdownRemark___frontmatter___cover___children'
-  | 'childrenMarkdownRemark___frontmatter___template'
-  | 'childrenMarkdownRemark___frontmatter___category'
-  | 'childrenMarkdownRemark___frontmatter___tags'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -1421,6 +1427,10 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___slug'
+  | 'childMarkdownRemark___frontmatter___emoji'
+  | 'childMarkdownRemark___frontmatter___template'
+  | 'childMarkdownRemark___frontmatter___category'
+  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childMarkdownRemark___frontmatter___cover___relativePath'
@@ -1459,9 +1469,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childMarkdownRemark___frontmatter___cover___id'
   | 'childMarkdownRemark___frontmatter___cover___children'
-  | 'childMarkdownRemark___frontmatter___template'
-  | 'childMarkdownRemark___frontmatter___category'
-  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -2054,7 +2061,6 @@ export type SiteSiteMetadataRssMetadataFilterInput = {
   feed_url?: InputMaybe<StringQueryOperatorInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
-  image_url?: InputMaybe<StringQueryOperatorInput>;
   copyright?: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -2112,8 +2118,9 @@ export type SiteFieldsEnum =
   | 'siteMetadata___rssMetadata___feed_url'
   | 'siteMetadata___rssMetadata___title'
   | 'siteMetadata___rssMetadata___description'
-  | 'siteMetadata___rssMetadata___image_url'
   | 'siteMetadata___rssMetadata___copyright'
+  | 'port'
+  | 'host'
   | 'pathPrefix'
   | 'polyfill'
   | 'jsxRuntime'
@@ -2248,6 +2255,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -3150,6 +3159,10 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___date'
   | 'frontmatter___slug'
+  | 'frontmatter___emoji'
+  | 'frontmatter___template'
+  | 'frontmatter___category'
+  | 'frontmatter___tags'
   | 'frontmatter___cover___sourceInstanceName'
   | 'frontmatter___cover___absolutePath'
   | 'frontmatter___cover___relativePath'
@@ -3228,9 +3241,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___cover___internal___mediaType'
   | 'frontmatter___cover___internal___owner'
   | 'frontmatter___cover___internal___type'
-  | 'frontmatter___template'
-  | 'frontmatter___category'
-  | 'frontmatter___tags'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -3594,7 +3604,7 @@ export type ImageSharpSortInput = {
 export type BlogPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, category?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, category?: string | null | undefined, emoji?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type CategoriesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3604,7 +3614,7 @@ export type CategoriesPageQuery = { allMarkdownRemark: { group: Array<{ fieldVal
 export type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, category?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type IndexPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, category?: string | null | undefined, emoji?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type TagsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3616,7 +3626,7 @@ export type CategoryPageQueryVariables = Exact<{
 }>;
 
 
-export type CategoryPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type CategoryPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, emoji?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type PageBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -3630,14 +3640,14 @@ export type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostBySlugQuery = { markdownRemark?: { html?: string | null | undefined, timeToRead?: number | null | undefined, excerpt?: string | null | undefined, frontmatter?: { title?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined } | null | undefined };
+export type BlogPostBySlugQuery = { markdownRemark?: { html?: string | null | undefined, timeToRead?: number | null | undefined, excerpt?: string | null | undefined, frontmatter?: { title?: string | null | undefined, emoji?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined } | null | undefined };
 
 export type TagPageQueryVariables = Exact<{
   tag?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type TagPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type TagPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, emoji?: string | null | undefined, date?: any | null | undefined, template?: string | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null | undefined, width: number, height: number, src: string, srcSet: string };
 

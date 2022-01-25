@@ -72,7 +72,7 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
               </Button>
             </Link>
           </LinksHeader>
-          <PostListing postEdges={postEdges} />
+          <PostListing postEdges={postEdges} coverWidth={40} />
           <Link style={{ color: '#444' }} to="/blog">
             and more...
           </Link>
@@ -104,6 +104,7 @@ export const pageQuery = graphql`
             title
             tags
             category
+            emoji
             cover {
               childImageSharp {
                 gatsbyImageData(width: 40, height: 40)
