@@ -71,6 +71,7 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
+        emoji
         cover {
           childImageSharp {
             gatsbyImageData(width: 150, height: 150)

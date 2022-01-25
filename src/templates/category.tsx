@@ -25,7 +25,7 @@ const CategoryTemplate: FC<PageProps<CategoryPageQuery, CategoryPageContext>> = 
         <Link style={{ margin: '0 5px' }} to="/categories">
           <Button variant="outlined">Categories</Button>
         </Link>
-        <PostListing postEdges={postEdges} />
+        <PostListing postEdges={postEdges} coverWidth={50} />
       </Container>
     </Layout>
   )
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            emoji
             cover {
               childImageSharp {
                 gatsbyImageData(width: 50, height: 50)

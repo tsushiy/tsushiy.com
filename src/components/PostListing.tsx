@@ -1,3 +1,4 @@
+import { Box } from '@mui/material'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
@@ -21,23 +22,28 @@ interface Props {
   postEdges: Array<{
     node: PostNode
   }>
+  coverWidth: number
+}
+
+interface Post {
+  path: MarkdownRemarkFields['slug']
+  tags: MarkdownRemarkFrontmatter['tags']
+  emoji: MarkdownRemarkFrontmatter['emoji']
+  cover: { childImageSharp?: { gatsbyImageData: Scalars['JSON'] } }
+  title: MarkdownRemarkFrontmatter['title']
+  date: MarkdownRemarkFrontmatter['date']
+  excerpt: MarkdownRemark['excerpt']
+  timeToRead: MarkdownRemark['timeToRead']
 }
 
 const PostListing: FC<Props> = (props) => {
   const getPostList = () => {
-    const postList: Array<{
-      path: MarkdownRemarkFields['slug']
-      tags: MarkdownRemarkFrontmatter['tags']
-      cover: { childImageSharp?: { gatsbyImageData: Scalars['JSON'] } }
-      title: MarkdownRemarkFrontmatter['title']
-      date: MarkdownRemarkFrontmatter['date']
-      excerpt: MarkdownRemark['excerpt']
-      timeToRead: MarkdownRemark['timeToRead']
-    }> = []
+    const postList: Array<Post> = []
     props.postEdges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
+        emoji: postEdge.node.frontmatter.emoji,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
@@ -48,18 +54,30 @@ const PostListing: FC<Props> = (props) => {
     return postList
   }
 
+  const getCover = (post: Post, width: number) => {
+    const cover = post.cover?.childImageSharp.gatsbyImageData ?? null
+    if (post.emoji) {
+      return (
+        <Box component="span" sx={{ fontSize: width, lineHeight: 1, color: 'initial', opacity: 0.9 }}>
+          {post.emoji}
+        </Box>
+      )
+    } else if (cover) {
+      return <GatsbyImage alt={'cover'} image={cover} />
+    } else {
+      return null
+    }
+  }
+
   const postList = getPostList()
   return (
     <div>
       <List>
         {postList.map((post) => {
-          const cover = post.cover.childImageSharp.gatsbyImageData ?? null
           return (
             <Link to={post.path} key={post.title}>
               <ListItem button disableRipple>
-                <ListItemIcon style={{ margin: '0 15px' }}>
-                  {cover ? <GatsbyImage alt={'cover'} image={cover} /> : null}
-                </ListItemIcon>
+                <ListItemIcon style={{ margin: '0 15px' }}>{getCover(post, props.coverWidth)}</ListItemIcon>
                 <LinkText primary={post.title} secondary={moment(post.date).format('MMM Do, YYYY')} />
               </ListItem>
             </Link>
