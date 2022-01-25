@@ -1,3 +1,4 @@
+import { CalendarTodayOutlined } from '@mui/icons-material'
 import { Container, Typography } from '@mui/material'
 import { styled } from '@mui/system'
 import { graphql } from 'gatsby'
@@ -46,7 +47,10 @@ const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props
         <PostTitleContainer>
           <h1>{post.title}</h1>
           <PostTitleMeta>
-            <Typography style={{ margin: '2px 5px' }}>{moment(post.date).format('MMMM Do, YYYY')}</Typography>
+            <Typography style={{ margin: '2px 5px' }}>
+              <CalendarTodayOutlined sx={{ fontSize: 'inherit', verticalAlign: '-2px', marginRight: '5px' }} />
+              {moment(post.date).format(config.dateFormat)}
+            </Typography>
             <PostTags tags={post.tags} category={post.category} />
           </PostTitleMeta>
         </PostTitleContainer>

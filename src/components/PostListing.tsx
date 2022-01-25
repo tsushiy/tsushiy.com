@@ -12,6 +12,8 @@ import React from 'react'
 import { MarkdownRemark, MarkdownRemarkFields, MarkdownRemarkFrontmatter, Scalars } from 'types/graphql-type'
 import { PostNode } from 'types/markdown-node'
 
+import config from '../../data/SiteConfig'
+
 import type { FC } from 'react'
 
 const LinkText = styled(ListItemText)({
@@ -78,7 +80,7 @@ const PostListing: FC<Props> = (props) => {
             <Link to={post.path} key={post.title}>
               <ListItem button disableRipple>
                 <ListItemIcon style={{ margin: '0 15px' }}>{getCover(post, props.coverWidth)}</ListItemIcon>
-                <LinkText primary={post.title} secondary={moment(post.date).format('MMM Do, YYYY')} />
+                <LinkText primary={post.title} secondary={moment(post.date).format(config.dateFormat)} />
               </ListItem>
             </Link>
           )

@@ -10,7 +10,7 @@ const config = {
   siteRssTitle: 'tsushiy.com', // Title of the RSS feed
   googleAnalyticsID: 'UA-136429373-4', // GA tracking ID.
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
-  dateFormat: 'DD/MM/YYYY', // Date format for display.
+  dateFormat: 'YYYY/MM/DD', // Date format for display.
   postsPerPage: 4, // Amount of posts displayed per listing page.
   userName: 'tsushiy', // Username to display in the author segment.
   userEmail: '', // Email used for RSS feed's author segment
