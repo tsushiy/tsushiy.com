@@ -18,6 +18,11 @@ const theme = createTheme({
       main: '#5C6070',
       contrastText: '#fff'
     }
+  },
+  typography: {
+    button: {
+      textTransform: 'none'
+    }
   }
 })
 const IndexChildrenContainer = styled(Container)({
