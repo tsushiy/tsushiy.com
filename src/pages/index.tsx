@@ -74,7 +74,9 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
           </LinksHeader>
           <PostListing postEdges={postEdges} coverWidth={40} />
           <Link style={{ color: '#444' }} to="/blog">
-            and more...
+            <Button disableRipple variant="text" size="small">
+              and more...
+            </Button>
           </Link>
         </LinksContainer>
       </Container>
