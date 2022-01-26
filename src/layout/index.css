@@ -89,6 +89,10 @@ blockquote {
   font-style: italic;
 }
 
+.math-display {
+  overflow: auto;
+}
+
 @media (max-width: 760px) {
   /* stylelint-disable-next-line selector-class-pattern */
   .MuiContainer-root {
