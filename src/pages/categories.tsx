@@ -30,7 +30,7 @@ const CategoriesPage: FC<PageProps<CategoriesPageQuery>> = (props) => {
 
   return (
     <Layout>
-      <Helmet title={`Tags – ${config.siteTitle}`} />
+      <Helmet title={`Categories – ${config.siteTitle}`} />
       <SEO />
       <Container>
         <h1>Categories</h1>
