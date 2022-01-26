@@ -16,7 +16,7 @@ const SocialLinksContainer = styled('div')({
   justifyContent: 'left',
   alignContent: 'center',
   alignItems: 'center',
-  margin: '20px 0'
+  margin: '10px 0'
 })
 
 interface Props {
