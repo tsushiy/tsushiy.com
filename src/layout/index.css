@@ -19,6 +19,7 @@ body {
   line-height: 1.6;
   letter-spacing: 0.03em;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ul {
@@ -88,10 +89,29 @@ blockquote {
   font-style: italic;
 }
 
+.math-display {
+  overflow: auto;
+}
+
 @media (max-width: 760px) {
   /* stylelint-disable-next-line selector-class-pattern */
   .MuiContainer-root {
     font-size: 0.95em;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0.7rem 0 0;
+  }
+
+  h2 {
+    font-size: 1.6em;
+    margin: 0.4rem 0 0.2rem;
+  }
+
+  h3 {
+    font-size: 1.3em;
+    margin: 0.4rem 0;
   }
 }
 

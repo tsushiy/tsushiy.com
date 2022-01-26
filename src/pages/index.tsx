@@ -18,7 +18,7 @@ import type { FC } from 'react'
 
 const IndexHeader = styled('div')({
   width: '60%',
-  margin: '30px auto',
+  margin: '30px auto 18px auto',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -41,7 +41,7 @@ const LinksHeader = styled('h2')({
   flexDirection: 'row',
   flexWrap: 'wrap',
   alignItems: 'center',
-  justifyContent: 'space-evenly'
+  justifyContent: 'center'
 })
 
 const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
@@ -67,14 +67,16 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
           <LinksHeader>
             Latest Articles
             <Link to="/blog">
-              <Button disableRipple variant="outlined" size="small">
+              <Button disableRipple color="secondary" variant="outlined" size="small" sx={{ mx: 2 }}>
                 View all
               </Button>
             </Link>
           </LinksHeader>
           <PostListing postEdges={postEdges} coverWidth={40} />
           <Link style={{ color: '#444' }} to="/blog">
-            and more...
+            <Button disableRipple variant="text" size="small">
+              and more...
+            </Button>
           </Link>
         </LinksContainer>
       </Container>

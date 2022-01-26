@@ -17,8 +17,7 @@ const NoticeContainer = styled('div')({
   flexWrap: 'wrap',
   justifyContent: 'center',
   alignContent: 'center',
-  alignItems: 'center',
-  marginTop: '25px'
+  alignItems: 'center'
 })
 
 const Footer: FC = () => {
@@ -31,8 +30,7 @@ const Footer: FC = () => {
   return (
     <FooterContainer>
       <NoticeContainer>
-        <h4>{copyright}</h4>
-        &nbsp;
+        <h4 style={{ marginRight: '6px' }}>{copyright}</h4>
         <a href={rssUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#444' }}>
           <FontAwesomeIcon icon={faRss} />
         </a>

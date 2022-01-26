@@ -47,8 +47,8 @@ const PostTags: FC<Props> = (props) => {
         {tags &&
           tags.map((tag) => (
             <Link key={tag} style={{ textDecoration: 'none', margin: '2px 3px' }} to={`/tags/${_.kebabCase(tag)}`}>
-              <Button disableRipple variant="outlined" size="small">
-                {tag}
+              <Button disableRipple variant="text" size="small">
+                #{tag}
               </Button>
             </Link>
           ))}

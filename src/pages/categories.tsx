@@ -30,14 +30,14 @@ const CategoriesPage: FC<PageProps<CategoriesPageQuery>> = (props) => {
 
   return (
     <Layout>
-      <Helmet title={`Tags – ${config.siteTitle}`} />
+      <Helmet title={`Categories – ${config.siteTitle}`} />
       <SEO />
       <Container>
         <h1>Categories</h1>
         <CategoriesContainer>
           {group.map((category) => (
             <Link key={category.fieldValue} to={`/categories/${_.kebabCase(category.fieldValue)}`}>
-              <Button disableRipple variant="outlined" size="medium" style={{ margin: '5px 3px' }}>
+              <Button disableRipple variant="outlined" size="small" style={{ margin: '5px 3px' }}>
                 {`${category.fieldValue} ${category.totalCount}`}
               </Button>
             </Link>

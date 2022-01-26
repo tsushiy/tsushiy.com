@@ -21,9 +21,11 @@ const CategoryTemplate: FC<PageProps<CategoryPageQuery, CategoryPageContext>> = 
     <Layout>
       <Helmet title={`Posts in category "${category}" | ${config.siteTitle}`} />
       <Container>
-        <h2>{`Category: ${category}`}</h2>
+        <h2>{category}</h2>
         <Link style={{ margin: '0 5px' }} to="/categories">
-          <Button variant="outlined">Categories</Button>
+          <Button color="secondary" variant="outlined">
+            Categories
+          </Button>
         </Link>
         <PostListing postEdges={postEdges} coverWidth={50} />
       </Container>

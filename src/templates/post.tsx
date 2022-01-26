@@ -18,11 +18,9 @@ import type { PostPageContext } from 'gatsby-node'
 import type { FC } from 'react'
 import type { BlogPostBySlugQuery } from 'types/graphql-type'
 
-const PostTitleContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column'
-})
 const PostTitleMeta = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
   marginBottom: '3px'
 })
 const PostSocialMeta = styled('div')({
@@ -44,16 +42,14 @@ const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Container>
-        <PostTitleContainer>
-          <h1>{post.title}</h1>
-          <PostTitleMeta>
-            <Typography style={{ margin: '2px 5px' }}>
-              <CalendarTodayOutlined sx={{ fontSize: 'inherit', verticalAlign: '-2px', marginRight: '5px' }} />
-              {moment(post.date).format(config.dateFormat)}
-            </Typography>
-            <PostTags tags={post.tags} category={post.category} />
-          </PostTitleMeta>
-        </PostTitleContainer>
+        <h1>{post.title}</h1>
+        <PostTitleMeta>
+          <Typography style={{ margin: '2px 5px' }}>
+            <CalendarTodayOutlined sx={{ fontSize: 'inherit', verticalAlign: '-2px', marginRight: '5px' }} />
+            {moment(post.date).format(config.dateFormat)}
+          </Typography>
+          <PostTags tags={post.tags} category={post.category} />
+        </PostTitleMeta>
         <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
         <PostSocialMeta>
           <SocialLinks postPath={slug} postNode={postNode} />
