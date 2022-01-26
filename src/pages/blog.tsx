@@ -19,10 +19,10 @@ const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
 
   return (
     <Layout>
-      <Helmet title="Articles" />
+      <Helmet title="Blog" />
       <SEO />
       <Container>
-        <h1>Articles</h1>
+        <h1>Blog</h1>
         <Link style={{ margin: '0 5px' }} to="/categories">
           <Button color="secondary" variant="outlined">
             Categories
