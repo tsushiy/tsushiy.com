@@ -15,8 +15,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#5C6070',
-      contrastText: '#fff'
+      main: '#424242'
     }
   },
   typography: {
