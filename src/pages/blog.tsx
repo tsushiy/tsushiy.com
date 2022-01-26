@@ -24,10 +24,14 @@ const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
       <Container>
         <h1>Articles</h1>
         <Link style={{ margin: '0 5px' }} to="/categories">
-          <Button variant="outlined">Categories</Button>
+          <Button color="secondary" variant="outlined">
+            Categories
+          </Button>
         </Link>
         <Link style={{ margin: '0 5px' }} to="/tags">
-          <Button variant="outlined">Tags</Button>
+          <Button color="secondary" variant="outlined">
+            Tags
+          </Button>
         </Link>
         <PostListing postEdges={postEdges} coverWidth={50} />
       </Container>

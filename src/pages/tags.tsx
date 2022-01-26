@@ -37,8 +37,8 @@ const TagsPage: FC<PageProps<TagsPageQuery>> = (props) => {
         <TagsContainer>
           {group.map((tag) => (
             <Link key={tag.fieldValue} to={`/tags/${_.kebabCase(tag.fieldValue)}`}>
-              <Button disableRipple variant="outlined" size="medium" style={{ margin: '5px 3px' }}>
-                {`${tag.fieldValue} ${tag.totalCount}`}
+              <Button disableRipple variant="outlined" size="small" style={{ margin: '5px 3px' }}>
+                {`#${tag.fieldValue} ${tag.totalCount}`}
               </Button>
             </Link>
           ))}

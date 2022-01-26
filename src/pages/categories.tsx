@@ -37,7 +37,7 @@ const CategoriesPage: FC<PageProps<CategoriesPageQuery>> = (props) => {
         <CategoriesContainer>
           {group.map((category) => (
             <Link key={category.fieldValue} to={`/categories/${_.kebabCase(category.fieldValue)}`}>
-              <Button disableRipple variant="outlined" size="medium" style={{ margin: '5px 3px' }}>
+              <Button disableRipple variant="outlined" size="small" style={{ margin: '5px 3px' }}>
                 {`${category.fieldValue} ${category.totalCount}`}
               </Button>
             </Link>

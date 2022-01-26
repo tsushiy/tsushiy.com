@@ -21,9 +21,11 @@ const TagTemplate: FC<PageProps<TagPageQuery, TagPageContext>> = (props) => {
     <Layout>
       <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
       <Container>
-        <h2>{`Tag: ${tag}`}</h2>
+        <h2>{`#${tag}`}</h2>
         <Link style={{ margin: '0 5px' }} to="/tags">
-          <Button variant="outlined">Tags</Button>
+          <Button color="secondary" variant="outlined">
+            Tags
+          </Button>
         </Link>
         <PostListing postEdges={postEdges} coverWidth={50} />
       </Container>

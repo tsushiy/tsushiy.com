@@ -67,7 +67,7 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
           <LinksHeader>
             Latest Articles
             <Link to="/blog">
-              <Button disableRipple variant="outlined" size="small">
+              <Button disableRipple color="secondary" variant="outlined" size="small">
                 View all
               </Button>
             </Link>
