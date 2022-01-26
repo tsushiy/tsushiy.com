@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Button } from '@mui/material'
+import { AppBar, Toolbar, Button, Container } from '@mui/material'
 import { styled } from '@mui/system'
 import { Link } from 'gatsby'
 import React from 'react'
@@ -15,10 +15,10 @@ const NavBar = styled(AppBar)({
 })
 const NavTitle = styled(Link)({
   color: '#222',
-  fontSize: '2.8ex',
+  fontSize: '1.5em',
   fontWeight: '600',
-  margin: '0px 5px',
-  padding: '0px 15px'
+  margin: '0px 15px 0px 0px',
+  padding: '0px 5px'
 })
 const NavLinksContainer = styled('div')({
   margin: '0 7px'
@@ -34,28 +34,30 @@ const UserLinksContainer = styled('div')({
 const Navigation: FC = () => {
   return (
     <NavBar position="sticky">
-      <Toolbar variant="dense">
-        <NavTitle to="/">tsushiy</NavTitle>
-        <NavLinksContainer>
-          {NavLinks.map((link) => (
-            <React.Fragment key={link.name}>
-              {link.url.startsWith('/') && (
-                <Link to={link.url}>
-                  <NavLink>{link.name}</NavLink>
-                </Link>
-              )}
-              {!link.url.startsWith('/') && (
-                <a href={link.url}>
-                  <NavLink>{link.name}</NavLink>
-                </a>
-              )}
-            </React.Fragment>
-          ))}
-        </NavLinksContainer>
-        <UserLinksContainer>
-          <UserLinks />
-        </UserLinksContainer>
-      </Toolbar>
+      <Container maxWidth="md">
+        <Toolbar variant="dense">
+          <NavTitle to="/">tsushiy</NavTitle>
+          <NavLinksContainer>
+            {NavLinks.map((link) => (
+              <React.Fragment key={link.name}>
+                {link.url.startsWith('/') && (
+                  <Link to={link.url}>
+                    <NavLink>{link.name}</NavLink>
+                  </Link>
+                )}
+                {!link.url.startsWith('/') && (
+                  <a href={link.url}>
+                    <NavLink>{link.name}</NavLink>
+                  </a>
+                )}
+              </React.Fragment>
+            ))}
+          </NavLinksContainer>
+          <UserLinksContainer>
+            <UserLinks />
+          </UserLinksContainer>
+        </Toolbar>
+      </Container>
     </NavBar>
   )
 }
