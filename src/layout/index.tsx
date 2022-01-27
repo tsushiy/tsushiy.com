@@ -8,9 +8,9 @@ import config from '../../data/SiteConfig'
 import Navigation from '../components/Navigation'
 
 import type { FC } from 'react'
-import './index.css'
 import 'katex/dist/katex.min.css'
 import 'prismjs/themes/prism-tomorrow.css'
+import './index.css'
 
 const theme = createTheme({
   palette: {
