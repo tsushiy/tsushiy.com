@@ -8,3 +8,9 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    ignore:
+      - dependency-name: 'gatsby'
+        update-types:
+          - 'version-update:semver-minor'
+          - 'version-update:semver-patch'
+      - dependency-name: 'gatsby-*'
