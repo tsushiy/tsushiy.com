@@ -6155,10 +6155,10 @@ gatsby-plugin-image@^2.5.2:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.7.2"
 
-gatsby-plugin-lodash@^5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-5.5.0.tgz#324101ee697dc0d2dc1ec4235aef6ba624d293d5"
-  integrity sha512-roaVh0uYlVL1bU/ulKDIiILriqcWT0a77JeKxbSDO+mAJB0epoRVkDCRdRvVB8lmIYjSgh6yHX1dKOQM4cRDAw==
+gatsby-plugin-lodash@^5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-5.6.0.tgz#1ad678fe9cf98bde4c237a6205303e28824283d0"
+  integrity sha512-xrgftyYKs6f0MQCAMG1Ai2rgDDG6Xb8ac1AMxIpDhjxR9kuMdjGJIKUdcQP6y1HK6gCtCtNXFi2PCdl3eUpgkQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     babel-plugin-lodash "^3.3.4"
