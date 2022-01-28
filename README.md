@@ -1,6 +1,33 @@
 # tsushiy.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6b2f5800-1017-43cf-882b-cbfa467be963/deploy-status)](https://app.netlify.com/sites/tsushiy/deploys)
+Personal blog made with Gatsby.
 
-Personal blog made with Gatsby, hosted on Netlify.  
-Based on [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/).
+## Development
+
+### Install dependencies
+
+```sh
+yarn install
+```
+
+### Start development server
+
+```sh
+yarn dev
+```
+
+### Create a production build
+
+```sh
+yarn build
+```
+
+### Run linting
+
+```sh
+yarn lint
+```
+
+```sh
+yarn fix # Run linting and automatically fix errors.
+```
