@@ -86,6 +86,7 @@
     "lint:prettier": "prettier --check '**/*.{ts,tsx}'",
     "lint:stylelint": "prettier --check '**/*.{css,scss}'",
     "lint:remark": "remark content/",
+    "lint": "run-s lint:eslint lint:prettier lint:stylelint",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "yarn lint:prettier --write",
     "fix:stylelint": "yarn lint:stylelint --write",
