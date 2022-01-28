@@ -96,7 +96,8 @@ const gatsbyConfig: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: config.themeColor
+        color: config.themeColor,
+        showSpinner: false
       }
     },
     'gatsby-plugin-image',

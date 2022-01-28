@@ -18,7 +18,7 @@ const config = {
   siteFBAppID: '',
   userTwitter: '',
   copyright: '© tsushiy', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#a7d28d', // Used for setting manifest and progress theme colors.
+  themeColor: '#a5d6a7', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0' // Used for setting manifest background color.
 }
 
