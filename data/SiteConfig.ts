@@ -33,9 +33,13 @@ if (config.pathPrefix === '/') {
 }
 
 // Make sure siteUrl doesn't have an ending forward slash
-if (config.siteUrl.substr(-1) === '/') config.siteUrl = config.siteUrl.slice(0, -1)
+if (config.siteUrl.endsWith('/')) {
+  config.siteUrl = config.siteUrl.slice(0, -1)
+}
 
 // Make sure siteRss has a starting forward slash
-if (config.siteRss && config.siteRss[0] !== '/') config.siteRss = `/${config.siteRss}`
+if (config.siteRss && !config.siteRss.startsWith('/')) {
+  config.siteRss = `/${config.siteRss}`
+}
 
 export default config

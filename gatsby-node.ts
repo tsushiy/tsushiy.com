@@ -28,34 +28,35 @@ export interface CategoryPageContext {
 
 export const onCreateNode: GatsbyNode<MarkdownRemark>['onCreateNode'] = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  let slug
   if (node.internal.type === 'MarkdownRemark') {
+    let slug
+    const template = node?.frontmatter?.template
     const fileNode = getNode(node.parent)
     const parsedFilePath = path.parse(fileNode.relativePath as string)
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`
-    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
-    } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`
-    } else {
-      slug = `/${parsedFilePath.dir}/`
+
+    switch (template) {
+      case 'page':
+        slug = `/${parsedFilePath.name}/`
+        break
+      case 'post':
+        slug = `/blog/${parsedFilePath.name}/`
+        break
+      default:
+        console.warn('WARNING: Invalid template.', node.frontmatter)
+        return
     }
 
-    if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
-        if (!date.isValid) console.warn('WARNING: Invalid date.', node.frontmatter)
-
-        createNodeField({ node, name: 'date', value: date.toISOString() })
-      }
-    }
     createNodeField({ node, name: 'slug', value: slug })
+
+    const date = node?.frontmatter?.date
+    if (date) {
+      const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
+      if (!date.isValid) {
+        console.warn('WARNING: Invalid date.', node.frontmatter)
+      }
+
+      createNodeField({ node, name: 'date', value: date.toISOString() })
+    }
   }
 }
 
@@ -108,8 +109,12 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
 
     const dateB = moment(postB.node.frontmatter.date, siteConfig.dateFromFormat)
 
-    if (dateA.isBefore(dateB)) return 1
-    if (dateB.isBefore(dateA)) return -1
+    if (dateA.isBefore(dateB)) {
+      return 1
+    }
+    if (dateB.isBefore(dateA)) {
+      return -1
+    }
 
     return 0
   })
@@ -133,7 +138,18 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1
     const nextEdge = postsEdges[nextID]
     const prevEdge = postsEdges[prevID]
-    const component = edge.node.frontmatter.template === 'post' ? postPage : pagePage
+    let component
+    switch (edge.node.frontmatter.template) {
+      case 'post':
+        component = postPage
+        break
+      case 'page':
+        component = pagePage
+        break
+      default:
+        console.warn('WARNING: Invalid template.', edge.node.frontmatter)
+        return
+    }
 
     createPage<PostPageContext>({
       path: edge.node.fields.slug,

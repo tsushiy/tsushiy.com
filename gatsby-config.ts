@@ -175,17 +175,15 @@ const gatsbyConfig: GatsbyConfig = {
               ) {
                 edges {
                   node {
-                    excerpt
                     html
-                    timeToRead
+                    excerpt
                     fields {
                       slug
                       date
                     }
                     frontmatter {
-                      title
                       date
-                      template
+                      title
                       category
                       tags
                     }

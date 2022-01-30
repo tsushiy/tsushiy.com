@@ -24,7 +24,7 @@ const SEO: FC<Props> = (props) => {
   let postURL
   if (postSEO) {
     const postMeta = postNode.frontmatter
-    ;({ title } = postMeta)
+    title = postMeta.title
     description = postNode.excerpt
     image = postMeta.cover ? getSrc(postMeta.cover.childImageSharp.gatsbyImageData) : config.siteLogo
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath)
@@ -34,8 +34,9 @@ const SEO: FC<Props> = (props) => {
     image = config.siteLogo
   }
 
-  if (!image.match('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]'))
+  if (!image.match('(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]')) {
     image = urljoin(config.siteUrl, config.pathPrefix, image)
+  }
 
   const blogURL = urljoin(config.siteUrl, config.pathPrefix)
   const schemaOrgJSONLD: Array<WithContext<WebSite | BreadcrumbList | BlogPosting>> = [

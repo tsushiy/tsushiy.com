@@ -1,9 +1,8 @@
 ---
+template: "post"
 date: 2019-04-10
 title: "Microsoft Minesweeperを自動で解く"
-slug: "2019-04-10"
 emoji: 🔨
-template: "post"
 category: "Tech"
 tags:
 ---
@@ -13,7 +12,7 @@ Microsoft Minesweeperを自動で解くプログラム。
 
 # Demo
 
-![demo](../images/2019-04-10/minekun-demo.gif)
+![minekun-demo](../../images/2019/microsoft-minesweeper-solver/minekun-demo.gif)
 
 # Microsoft Minesweeper
 

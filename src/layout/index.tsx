@@ -33,23 +33,15 @@ const IndexChildrenContainer = styled(Container)({
 
 const MainLayout: FC = ({ children }) => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Helmet>
         <meta name="description" content={config.siteDescription} />
         <html lang="ja" />
       </Helmet>
       <Navigation />
       <IndexChildrenContainer maxWidth="md">{children}</IndexChildrenContainer>
-    </>
-  )
-}
-
-const AppWrapper: FC = (props) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <MainLayout {...props} />
     </ThemeProvider>
   )
 }
 
-export default AppWrapper
+export default MainLayout

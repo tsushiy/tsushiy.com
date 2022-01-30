@@ -1,9 +1,8 @@
 ---
+template: "post"
 date: 2019-06-06
 title: "AtCoder M-SOLUTIONS プロコンオープン C, D, E"
-slug: "2019-06-06"
 emoji: 🐎
-template: "post"
 category: "競プロ"
 tags:
   - AtCoder

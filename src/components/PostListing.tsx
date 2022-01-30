@@ -35,7 +35,6 @@ interface Post {
   title: MarkdownRemarkFrontmatter['title']
   date: MarkdownRemarkFrontmatter['date']
   excerpt: MarkdownRemark['excerpt']
-  timeToRead: MarkdownRemark['timeToRead']
 }
 
 const PostListing: FC<Props> = (props) => {
@@ -49,8 +48,7 @@ const PostListing: FC<Props> = (props) => {
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
-        excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        excerpt: postEdge.node.excerpt
       })
     })
     return postList

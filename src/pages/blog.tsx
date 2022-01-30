@@ -52,24 +52,22 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          excerpt
           fields {
             slug
             date
           }
-          excerpt
-          timeToRead
           frontmatter {
+            date
             title
-            tags
-            category
             emoji
             cover {
               childImageSharp {
                 gatsbyImageData(width: 50, height: 50)
               }
             }
-            date
-            template
+            category
+            tags
           }
         }
       }

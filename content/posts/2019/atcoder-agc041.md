@@ -1,9 +1,8 @@
 ---
+template: "post"
 date: 2019-12-29
 title: "AtCoder AGC 041 A, B, C"
-slug: "2019-12-29"
 emoji: 🐎
-template: "post"
 category: "競プロ"
 tags:
   - AtCoder
