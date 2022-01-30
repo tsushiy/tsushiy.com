@@ -15,7 +15,7 @@ const NavBar = styled(AppBar)({
 })
 const NavTitle = styled(Link)({
   color: '#222',
-  fontSize: '1.5em',
+  fontSize: '1.5rem',
   fontWeight: '600',
   margin: '0px 15px 0px 0px',
   padding: '0px 5px'
@@ -25,7 +25,7 @@ const NavLinksContainer = styled('div')({
 })
 const NavLink = styled(Button)({
   color: '#444',
-  fontSize: '2.3ex'
+  fontSize: '1.25rem'
 })
 const UserLinksContainer = styled('div')({
   margin: '0 0 0 auto'
