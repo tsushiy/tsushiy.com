@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import { BlogPageQuery } from 'types/graphql-type'
 
 import Footer from '../components/Footer'
+import PageTitle from '../components/PageTitle'
 import PostListing from '../components/PostListing'
 import SEO from '../components/SEO'
 import Layout from '../layout'
@@ -22,7 +23,7 @@ const IndexPage: FC<PageProps<BlogPageQuery>> = (props) => {
       <Helmet title="Blog" />
       <SEO />
       <Container>
-        <h1>Blog</h1>
+        <PageTitle title="Blog" />
         <Link style={{ margin: '0 5px' }} to="/categories">
           <Button color="secondary" variant="outlined">
             Categories

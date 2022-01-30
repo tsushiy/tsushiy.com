@@ -4,6 +4,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
+import PageTitle from '../components/PageTitle'
 import PostListing from '../components/PostListing'
 import Layout from '../layout'
 
@@ -21,7 +22,7 @@ const CategoryTemplate: FC<PageProps<CategoryPageQuery, CategoryPageContext>> = 
     <Layout>
       <Helmet title={`Posts in category "${category}" | ${config.siteTitle}`} />
       <Container>
-        <h2>{category}</h2>
+        <PageTitle title={category} />
         <Link style={{ margin: '0 5px' }} to="/categories">
           <Button color="secondary" variant="outlined">
             Categories

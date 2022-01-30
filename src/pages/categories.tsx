@@ -9,6 +9,7 @@ import { CategoriesPageQuery } from 'types/graphql-type'
 
 import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
+import PageTitle from '../components/PageTitle'
 import SEO from '../components/SEO'
 import Layout from '../layout'
 
@@ -33,7 +34,7 @@ const CategoriesPage: FC<PageProps<CategoriesPageQuery>> = (props) => {
       <Helmet title={`Categories – ${config.siteTitle}`} />
       <SEO />
       <Container>
-        <h1>Categories</h1>
+        <PageTitle title="Categories" />
         <CategoriesContainer>
           {group.map((category) => (
             <Link key={category.fieldValue} to={`/categories/${_.kebabCase(category.fieldValue)}`}>

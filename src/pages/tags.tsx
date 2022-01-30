@@ -9,6 +9,7 @@ import { TagsPageQuery } from 'types/graphql-type'
 
 import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
+import PageTitle from '../components/PageTitle'
 import SEO from '../components/SEO'
 import Layout from '../layout'
 
@@ -33,7 +34,7 @@ const TagsPage: FC<PageProps<TagsPageQuery>> = (props) => {
       <Helmet title={`Tags – ${config.siteTitle}`} />
       <SEO />
       <Container>
-        <h1>Tags</h1>
+        <PageTitle title="Tags" />
         <TagsContainer>
           {group.map((tag) => (
             <Link key={tag.fieldValue} to={`/tags/${_.kebabCase(tag.fieldValue)}`}>

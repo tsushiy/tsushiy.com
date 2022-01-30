@@ -8,6 +8,7 @@ import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
+import PageTitle from '../components/PageTitle'
 import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import SocialLinks from '../components/SocialLinks'
@@ -42,7 +43,7 @@ const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Container>
-        <h1>{post.title}</h1>
+        <PageTitle title={post.title} />
         <PostTitleMeta>
           <Typography style={{ margin: '2px 5px' }}>
             <CalendarTodayOutlined sx={{ fontSize: 'inherit', verticalAlign: '-2px', marginRight: '5px' }} />
