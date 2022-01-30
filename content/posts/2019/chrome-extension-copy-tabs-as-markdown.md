@@ -1,8 +1,8 @@
 ---
+template: "post"
 date: 2019-04-06
 title: "MarkdownでタブのタイトルとURLをコピーするChrome拡張を作った"
 emoji: 🔨
-template: "post"
 category: "Tech"
 tags:
 ---

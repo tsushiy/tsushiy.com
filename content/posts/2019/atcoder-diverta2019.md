@@ -1,8 +1,8 @@
 ---
+template: "post"
 date: 2019-05-13
 title: "AtCoder diverta 2019 E"
 emoji: 🐎
-template: "post"
 category: "競プロ"
 tags:
   - AtCoder

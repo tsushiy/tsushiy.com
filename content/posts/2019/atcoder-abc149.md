@@ -1,8 +1,8 @@
 ---
+template: "post"
 date: 2019-12-30
 title: "AtCoder ABC 149 D, E, F"
 emoji: 🐎
-template: "post"
 category: "競プロ"
 tags:
   - AtCoder

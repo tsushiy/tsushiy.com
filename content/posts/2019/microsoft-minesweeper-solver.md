@@ -1,8 +1,8 @@
 ---
+template: "post"
 date: 2019-04-10
 title: "Microsoft Minesweeperを自動で解く"
 emoji: 🔨
-template: "post"
 category: "Tech"
 tags:
 ---

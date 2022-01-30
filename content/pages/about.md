@@ -1,6 +1,6 @@
 ---
-title: "About"
 template: "page"
+title: "About"
 ---
 
 Yuki Tsushima ([tsushiy](https://github.com/tsushiy))

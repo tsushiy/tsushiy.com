@@ -1,8 +1,8 @@
 ---
+template: "post"
 date: 2020-03-05
 title: "HugoからGatsbyに乗り換えた"
 cover: "../../covers/gatsbyjs-icon.png"
-template: "post"
 category: "Tech"
 tags:
 ---
