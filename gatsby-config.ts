@@ -183,7 +183,6 @@ const gatsbyConfig: GatsbyConfig = {
                       date
                     }
                     frontmatter {
-                      template
                       date
                       title
                       category

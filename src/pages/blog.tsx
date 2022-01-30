@@ -59,7 +59,6 @@ export const pageQuery = graphql`
             date
           }
           frontmatter {
-            template
             date
             title
             emoji
