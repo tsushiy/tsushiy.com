@@ -14,9 +14,9 @@ import type { FC } from 'react'
 const NotFoundPage: FC<PageProps> = () => {
   return (
     <Layout>
+      <Helmet title={`Page not found – ${config.siteTitle}`} />
       <SEO />
       <Container maxWidth="md">
-        <Helmet title={`Page not found – ${config.siteTitle}`} />
         <PageTitle title="404 Not Found." />
       </Container>
       <Footer />

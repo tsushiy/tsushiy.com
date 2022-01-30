@@ -38,9 +38,7 @@ const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${post.title} | ${config.siteTitle}`}</title>
-      </Helmet>
+      <Helmet title={`${post.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Container>
         <PageTitle title={post.title} />
