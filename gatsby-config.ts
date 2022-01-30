@@ -177,7 +177,6 @@ const gatsbyConfig: GatsbyConfig = {
                   node {
                     html
                     excerpt
-                    timeToRead
                     fields {
                       slug
                       date

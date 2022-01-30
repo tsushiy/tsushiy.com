@@ -3599,7 +3599,7 @@ export type ImageSharpSortInput = {
 export type BlogPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type CategoriesPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3609,7 +3609,7 @@ export type CategoriesPageQuery = { allMarkdownRemark: { group: Array<{ fieldVal
 export type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type IndexPageQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type TagsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3621,28 +3621,28 @@ export type CategoryPageQueryVariables = Exact<{
 }>;
 
 
-export type CategoryPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type CategoryPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type PageBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type PageBySlugQuery = { markdownRemark?: { html?: string | null | undefined, excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined } | null | undefined } | null | undefined };
+export type PageBySlugQuery = { markdownRemark?: { html?: string | null | undefined, excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined } | null | undefined } | null | undefined };
 
 export type BlogPostBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type BlogPostBySlugQuery = { markdownRemark?: { html?: string | null | undefined, excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } | null | undefined };
+export type BlogPostBySlugQuery = { markdownRemark?: { html?: string | null | undefined, excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, category?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } | null | undefined };
 
 export type TagPageQueryVariables = Exact<{
   tag?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type TagPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, timeToRead?: number | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
+export type TagPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined, date?: any | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, emoji?: string | null | undefined, tags?: Array<string | null | undefined> | null | undefined, cover?: { childImageSharp?: { gatsbyImageData: any } | null | undefined } | null | undefined } | null | undefined } }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null | undefined, width: number, height: number, src: string, srcSet: string };
 
