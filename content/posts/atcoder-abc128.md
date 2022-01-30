@@ -1,7 +1,6 @@
 ---
 date: 2019-05-29
 title: "AtCoder ABC 128 D, E, F"
-slug: "2019-05-29"
 emoji: 🐎
 template: "post"
 category: "競プロ"

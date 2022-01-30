@@ -1,7 +1,6 @@
 ---
 date: 2019-06-11
 title: "AtCoder ABC 129 E, F"
-slug: "2019-06-11"
 emoji: 🐎
 template: "post"
 category: "競プロ"

@@ -1,7 +1,6 @@
 ---
 date: 2019-04-02
 title: "ダンボーのアイコンを描いた"
-slug: "2019-04-02"
 cover: "../covers/avatar.png"
 template: "post"
 category: "雑記"

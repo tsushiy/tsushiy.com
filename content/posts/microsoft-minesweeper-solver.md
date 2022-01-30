@@ -1,7 +1,6 @@
 ---
 date: 2019-04-10
 title: "Microsoft Minesweeperを自動で解く"
-slug: "2019-04-10"
 emoji: 🔨
 template: "post"
 category: "Tech"
