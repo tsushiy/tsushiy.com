@@ -12,7 +12,7 @@ Microsoft Minesweeperを自動で解くプログラム。
 
 # Demo
 
-![demo](../images/2019-04-10/minekun-demo.gif)
+![minekun-demo](../../images/2019/microsoft-minesweeper-solver/minekun-demo.gif)
 
 # Microsoft Minesweeper
 

@@ -1,7 +1,7 @@
 ---
 date: 2019-04-02
 title: "ダンボーのアイコンを描いた"
-cover: "../covers/avatar.png"
+cover: "../../covers/avatar.png"
 template: "post"
 category: "雑記"
 tags:
@@ -9,8 +9,7 @@ tags:
 
 ダンボーのアイコンを描きました。
 
-![](../images/2019-04-02/2019-04-02-danbo-icon01a.jpg)
-
-![](../images/2019-04-02/2019-04-02-danbo-icon01b.jpg)
+![danbo-a](../../images/2019/danbo-icon/danbo-icon-a.jpg)
+![danbo-b](../../images/2019/danbo-icon/danbo-icon-b.jpg)
 
 無限に増える。
