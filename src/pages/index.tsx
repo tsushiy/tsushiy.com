@@ -54,13 +54,7 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
       <SEO />
       <Container>
         <IndexHeader>
-          <StaticImage
-            src={'../images/avatar.png'}
-            className="newsletter-avatar"
-            alt="tsushiy"
-            width={115}
-            style={{ borderRadius: '50%' }}
-          />
+          <StaticImage src={'../images/avatar.png'} alt="tsushiy" width={115} style={{ borderRadius: '50%' }} />
           <h1 style={{ margin: '0' }}>tsushiy</h1>
         </IndexHeader>
         <LinksContainer>
