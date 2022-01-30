@@ -47,23 +47,23 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
+          timeToRead
           fields {
             slug
             date
           }
-          excerpt
-          timeToRead
           frontmatter {
+            template
+            date
             title
-            tags
             emoji
             cover {
               childImageSharp {
                 gatsbyImageData(width: 50, height: 50)
               }
             }
-            date
-            template
+            tags
           }
         }
       }

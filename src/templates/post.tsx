@@ -67,9 +67,15 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      timeToRead
       excerpt
+      timeToRead
+      fields {
+        slug
+        date
+      }
       frontmatter {
+        template
+        date
         title
         emoji
         cover {
@@ -77,14 +83,8 @@ export const pageQuery = graphql`
             gatsbyImageData(width: 150, height: 150)
           }
         }
-        date
-        template
         category
         tags
-      }
-      fields {
-        slug
-        date
       }
     }
   }

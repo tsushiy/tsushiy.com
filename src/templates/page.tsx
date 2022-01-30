@@ -41,15 +41,13 @@ export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-      timeToRead
       excerpt
-      frontmatter {
-        title
-        template
-      }
+      timeToRead
       fields {
         slug
-        date
+      }
+      frontmatter {
+        title
       }
     }
   }
