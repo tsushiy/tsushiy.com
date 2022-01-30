@@ -23,7 +23,7 @@ import type { BlogPostBySlugQuery } from 'types/graphql-type'
 const PostTitleMeta = styled('div')({
   display: 'flex',
   flexDirection: 'column',
-  marginBottom: '3px'
+  marginBottom: '15px'
 })
 const PostSocialMeta = styled('div')({
   display: 'flex',
@@ -44,7 +44,7 @@ const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props
       <Container>
         <PageTitle title={post.title} />
         <PostTitleMeta>
-          <Typography style={{ margin: '2px 5px' }}>
+          <Typography style={{ fontSize: '.9rem', color: '#4e4e4e', marginLeft: '5px' }}>
             <CalendarTodayOutlined sx={{ fontSize: 'inherit', verticalAlign: '-2px', marginRight: '5px' }} />
             {moment(post.date).format(config.dateFormat)}
           </Typography>

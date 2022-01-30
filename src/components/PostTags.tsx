@@ -13,16 +13,14 @@ const PostCategoryContainer = styled('div')({
   flexDirection: 'row',
   flexWrap: 'wrap',
   alignItems: 'center',
-  justifyContent: 'left',
-  margin: '3px 0'
+  justifyContent: 'left'
 })
 const PostTagContainer = styled('div')({
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
   alignItems: 'center',
-  justifyContent: 'left',
-  margin: '3px 0'
+  justifyContent: 'left'
 })
 
 interface Props {
@@ -35,7 +33,7 @@ const PostTags: FC<Props> = (props) => {
   return (
     <div>
       <PostCategoryContainer>
-        <h4 style={{ margin: '0 3px 0 5px' }}>Category:</h4>
+        <span style={{ margin: '0 3px 0 5px', fontWeight: 'bold' }}>Category:</span>
         <Link style={{ textDecoration: 'none' }} to={`/categories/${_.kebabCase(category)}`}>
           <Button disableRipple variant="text" size="small">
             {category}
@@ -43,7 +41,7 @@ const PostTags: FC<Props> = (props) => {
         </Link>
       </PostCategoryContainer>
       <PostTagContainer>
-        <h4 style={{ margin: '0 3px 0 5px' }}>Tags:</h4>
+        <span style={{ margin: '0 3px 0 5px', fontWeight: 'bold' }}>Tags:</span>
         {tags &&
           tags.map((tag) => (
             <Link key={tag} style={{ textDecoration: 'none', margin: '2px 3px' }} to={`/tags/${_.kebabCase(tag)}`}>
