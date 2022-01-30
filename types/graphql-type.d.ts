@@ -414,12 +414,11 @@ export type MarkdownRemarkTableOfContentsArgs = {
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
-  slug?: Maybe<Scalars['String']>;
-  emoji?: Maybe<Scalars['String']>;
+  cover?: Maybe<File>;
   template?: Maybe<Scalars['String']>;
   category?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-  cover?: Maybe<File>;
+  emoji?: Maybe<Scalars['String']>;
 };
 
 
@@ -431,8 +430,8 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 };
 
 export type MarkdownRemarkFields = {
-  date?: Maybe<Scalars['Date']>;
   slug?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
 };
 
 
@@ -1214,12 +1213,11 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
-  slug?: InputMaybe<StringQueryOperatorInput>;
-  emoji?: InputMaybe<StringQueryOperatorInput>;
+  cover?: InputMaybe<FileFilterInput>;
   template?: InputMaybe<StringQueryOperatorInput>;
   category?: InputMaybe<StringQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
-  cover?: InputMaybe<FileFilterInput>;
+  emoji?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1365,8 +1363,8 @@ export type BooleanQueryOperatorInput = {
 };
 
 export type MarkdownRemarkFieldsFilterInput = {
-  date?: InputMaybe<DateQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
+  date?: InputMaybe<DateQueryOperatorInput>;
 };
 
 export type MarkdownHeadingFilterListInput = {
@@ -1479,11 +1477,6 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___date'
-  | 'childrenMarkdownRemark___frontmatter___slug'
-  | 'childrenMarkdownRemark___frontmatter___emoji'
-  | 'childrenMarkdownRemark___frontmatter___template'
-  | 'childrenMarkdownRemark___frontmatter___category'
-  | 'childrenMarkdownRemark___frontmatter___tags'
   | 'childrenMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childrenMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childrenMarkdownRemark___frontmatter___cover___relativePath'
@@ -1522,11 +1515,15 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childrenMarkdownRemark___frontmatter___cover___id'
   | 'childrenMarkdownRemark___frontmatter___cover___children'
+  | 'childrenMarkdownRemark___frontmatter___template'
+  | 'childrenMarkdownRemark___frontmatter___category'
+  | 'childrenMarkdownRemark___frontmatter___tags'
+  | 'childrenMarkdownRemark___frontmatter___emoji'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
-  | 'childrenMarkdownRemark___fields___date'
   | 'childrenMarkdownRemark___fields___slug'
+  | 'childrenMarkdownRemark___fields___date'
   | 'childrenMarkdownRemark___html'
   | 'childrenMarkdownRemark___htmlAst'
   | 'childrenMarkdownRemark___excerptAst'
@@ -1579,11 +1576,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___date'
-  | 'childMarkdownRemark___frontmatter___slug'
-  | 'childMarkdownRemark___frontmatter___emoji'
-  | 'childMarkdownRemark___frontmatter___template'
-  | 'childMarkdownRemark___frontmatter___category'
-  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childMarkdownRemark___frontmatter___cover___relativePath'
@@ -1622,11 +1614,15 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___cover___childrenImageSharp'
   | 'childMarkdownRemark___frontmatter___cover___id'
   | 'childMarkdownRemark___frontmatter___cover___children'
+  | 'childMarkdownRemark___frontmatter___template'
+  | 'childMarkdownRemark___frontmatter___category'
+  | 'childMarkdownRemark___frontmatter___tags'
+  | 'childMarkdownRemark___frontmatter___emoji'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
-  | 'childMarkdownRemark___fields___date'
   | 'childMarkdownRemark___fields___slug'
+  | 'childMarkdownRemark___fields___date'
   | 'childMarkdownRemark___html'
   | 'childMarkdownRemark___htmlAst'
   | 'childMarkdownRemark___excerptAst'
@@ -3311,11 +3307,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___date'
-  | 'frontmatter___slug'
-  | 'frontmatter___emoji'
-  | 'frontmatter___template'
-  | 'frontmatter___category'
-  | 'frontmatter___tags'
   | 'frontmatter___cover___sourceInstanceName'
   | 'frontmatter___cover___absolutePath'
   | 'frontmatter___cover___relativePath'
@@ -3394,11 +3385,15 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___cover___internal___mediaType'
   | 'frontmatter___cover___internal___owner'
   | 'frontmatter___cover___internal___type'
+  | 'frontmatter___template'
+  | 'frontmatter___category'
+  | 'frontmatter___tags'
+  | 'frontmatter___emoji'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
-  | 'fields___date'
   | 'fields___slug'
+  | 'fields___date'
   | 'html'
   | 'htmlAst'
   | 'excerptAst'
