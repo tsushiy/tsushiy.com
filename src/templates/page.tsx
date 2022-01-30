@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
+import MarkdownBody from '../components/MarkdownBody'
+import PageTitle from '../components/PageTitle'
 import SEO from '../components/SEO'
 import Layout from '../layout'
 
@@ -21,13 +23,11 @@ const PageTemplate: FC<PageProps<PageBySlugQuery, PostPageContext>> = (props) =>
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${post.title} | ${config.siteTitle}`}</title>
-      </Helmet>
+      <Helmet title={`${post.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} />
       <Container>
-        <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <PageTitle title={post.title} />
+        <MarkdownBody dangerHtml={postNode.html} />
         <Footer />
       </Container>
     </Layout>

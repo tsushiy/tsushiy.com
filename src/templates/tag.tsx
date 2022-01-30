@@ -4,6 +4,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
+import PageTitle from '../components/PageTitle'
 import PostListing from '../components/PostListing'
 import Layout from '../layout'
 
@@ -21,7 +22,7 @@ const TagTemplate: FC<PageProps<TagPageQuery, TagPageContext>> = (props) => {
     <Layout>
       <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
       <Container>
-        <h2>{`#${tag}`}</h2>
+        <PageTitle title={`#${tag}`} />
         <Link style={{ margin: '0 5px' }} to="/tags">
           <Button color="secondary" variant="outlined">
             Tags

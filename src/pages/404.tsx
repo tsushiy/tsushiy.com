@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
+import PageTitle from '../components/PageTitle'
 import SEO from '../components/SEO'
 import Layout from '../layout'
 
@@ -13,10 +14,10 @@ import type { FC } from 'react'
 const NotFoundPage: FC<PageProps> = () => {
   return (
     <Layout>
+      <Helmet title={`Page not found – ${config.siteTitle}`} />
       <SEO />
       <Container maxWidth="md">
-        <Helmet title={`Page not found – ${config.siteTitle}`} />
-        <h1>404 Not Found.</h1>
+        <PageTitle title="404 Not Found." />
       </Container>
       <Footer />
     </Layout>

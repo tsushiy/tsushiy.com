@@ -8,6 +8,8 @@ import Helmet from 'react-helmet'
 
 import config from '../../data/SiteConfig'
 import Footer from '../components/Footer'
+import MarkdownBody from '../components/MarkdownBody'
+import PageTitle from '../components/PageTitle'
 import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import SocialLinks from '../components/SocialLinks'
@@ -21,7 +23,7 @@ import type { BlogPostBySlugQuery } from 'types/graphql-type'
 const PostTitleMeta = styled('div')({
   display: 'flex',
   flexDirection: 'column',
-  marginBottom: '3px'
+  marginBottom: '15px'
 })
 const PostSocialMeta = styled('div')({
   display: 'flex',
@@ -37,20 +39,18 @@ const PostTemplate: FC<PageProps<BlogPostBySlugQuery, PostPageContext>> = (props
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${post.title} | ${config.siteTitle}`}</title>
-      </Helmet>
+      <Helmet title={`${post.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
       <Container>
-        <h1>{post.title}</h1>
+        <PageTitle title={post.title} />
         <PostTitleMeta>
-          <Typography style={{ margin: '2px 5px' }}>
+          <Typography style={{ fontSize: '.9rem', color: '#4e4e4e', marginLeft: '5px' }}>
             <CalendarTodayOutlined sx={{ fontSize: 'inherit', verticalAlign: '-2px', marginRight: '5px' }} />
             {moment(post.date).format(config.dateFormat)}
           </Typography>
           <PostTags tags={post.tags} category={post.category} />
         </PostTitleMeta>
-        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        <MarkdownBody dangerHtml={postNode.html} />
         <PostSocialMeta>
           <SocialLinks postPath={slug} postNode={postNode} />
         </PostSocialMeta>

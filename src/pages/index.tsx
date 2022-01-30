@@ -36,6 +36,7 @@ const LinksContainer = styled('div')({
 const LinksHeader = styled('h2')({
   width: '80%',
   color: '#444',
+  fontSize: '2rem',
   margin: '0 auto 0',
   display: 'flex',
   flexDirection: 'row',
@@ -54,14 +55,8 @@ const IndexPage: FC<PageProps<IndexPageQuery>> = (props) => {
       <SEO />
       <Container>
         <IndexHeader>
-          <StaticImage
-            src={'../images/avatar.png'}
-            className="newsletter-avatar"
-            alt="tsushiy"
-            width={115}
-            style={{ borderRadius: '50%' }}
-          />
-          <h1 style={{ margin: '0' }}>tsushiy</h1>
+          <StaticImage src={'../images/avatar.png'} alt="tsushiy" width={115} style={{ borderRadius: '50%' }} />
+          <h1 style={{ fontSize: '3rem', margin: '0' }}>tsushiy</h1>
         </IndexHeader>
         <LinksContainer>
           <LinksHeader>
