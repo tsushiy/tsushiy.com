@@ -67,6 +67,7 @@ const gatsbyConfig: GatsbyConfig = {
               strict: 'ignore'
             }
           },
+          'gatsby-remark-autolink-headers',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
@@ -81,9 +82,7 @@ const gatsbyConfig: GatsbyConfig = {
           {
             resolve: 'gatsby-remark-responsive-iframe'
           },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-autolink-headers',
-          'gatsby-remark-prismjs'
+          'gatsby-remark-copy-linked-files'
         ]
       }
     },
