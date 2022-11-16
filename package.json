@@ -73,7 +73,7 @@
     "blog"
   ],
   "license": "MIT",
-  "main": "n/a",
+  "default": "n/a",
   "scripts": {
     "ts-gatsby": "ts-node ./node_modules/.bin/gatsby",
     "develop": "yarn ts-gatsby develop",
