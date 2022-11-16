@@ -31,7 +31,11 @@ const IndexChildrenContainer = styled(Container)({
   margin: '1em auto'
 })
 
-const MainLayout: FC = ({ children }) => {
+type LayoutProps = {
+  children?: React.ReactNode
+}
+
+const MainLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
