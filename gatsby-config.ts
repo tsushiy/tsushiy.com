@@ -1,5 +1,3 @@
-import urljoin from 'url-join'
-
 import { Query } from 'types/graphql-type'
 
 import config from './data/SiteConfig'
@@ -9,10 +7,10 @@ import type { GatsbyConfig } from 'gatsby'
 const gatsbyConfig: GatsbyConfig = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
-    siteUrl: urljoin(config.siteUrl, config.pathPrefix),
+    siteUrl: config.siteUrl,
     rssMetadata: {
-      site_url: urljoin(config.siteUrl, config.pathPrefix),
-      feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
+      site_url: config.siteUrl,
+      feed_url: `${config.siteUrl}${config.siteRss}`,
       title: config.siteTitle,
       description: config.siteDescription,
       copyright: config.copyright
