@@ -12,7 +12,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.1",
-    "gatsby": "^4.6.0",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-catch-links": "^4.6.0",
     "gatsby-plugin-feed": "^4.6.0",
     "gatsby-plugin-google-analytics": "^4.6.0",
