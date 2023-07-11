@@ -14,9 +14,6 @@ Software Engineer
 
 ## 興味
 
-- 開発
-  - そこそこ使う : Ruby, Python, TypeScript, Shell Script  
-  - まれに使う : C++
 - 写真
   - 今のカメラ : SONY α7C
 - 競技プログラミング
